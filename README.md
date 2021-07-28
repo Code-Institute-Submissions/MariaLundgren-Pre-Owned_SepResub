@@ -57,7 +57,57 @@ The font chosen for this project is Permanent Marker for the logo and Lato for t
 
 ## Features 
 
-### Excisting Features 
+### Existing Features
+
+- Navbar
+    - The navbar contains links to different parts of the website and the company logo. The navbar also contains a search field so the user can search for specific products on the website. The navbar is sticky so that the user always can navigate top different parts on the website. 
+    - As a registered user you will have access to your profile, your favorites and your shopping bag.
+- Footer
+    - The footer contains links to social media and an about us section. 
+- Home page 
+    - Navbar (described under navbar)
+    - This page contains a hero image underneath the navbar.
+    - Underneath the hero image images with that are links to different part of the product categories are available.
+    - Footer (described under footer)
+- Products page
+    - Navbar (described under navbar)
+    - Underneath the navbar there are a field to sort the clothes based on price and a field to filter the clothes based on size and color. 
+    - The products page contains images of the clothes with the heart underneath that works as a toggle to add or remove the item to your favorites (if you are a registered user), for all users the title, price and size are displayed underneath the image.
+    - Footer (described under footer)
+- Selected product page 
+    - Navbar (described under navbar)
+    - Underneath the navbar an image of the selected product is presented and all the information about the product, the title size, price and color of the product.
+    - On this page the heart for adding/removing the item from favorites are also presented to registered users.
+    - On this page there is also a button for the user to add the product to their shopping bag. 
+    - Footer (described under footer)
+- My bag page 
+    - Navbar (described under navbar)
+    - Underneath the navbar on this page all the products added to the user's bag are presented, all the information of the products, and the heart to add/remove from favourites. There also is a 
+    cross for the user to remove the item from the shopping bag. 
+    - Underneath the items in the shopping bag there are field for the details nessesary for completing the purchase, shipping and payment details. And at the end above the footer a button to complete the burchase is presented. 
+    - Footer (described under footer)
+- My profile page
+    - Navbar (described under navbar)
+    - Under the navbar the information about the user is presented in a form where the user also can update their information. 
+    - Next to the profile information is the user's orders presented with ordernumber, date, numbers of items and price. 
+    - Underneath the profile information and the orders the messages that the user have sent to the site owners are avalible toghether with the responses that the users have recived. 
+    - Footer (described under footer)
+- My favorites page
+    - Navbar (described under navbar)
+    - Underneth the navbar on this page all the items that the users have added to their product page are shown. There is an image of the product, with the heart to add/remove the item from favourites, the title, price and size of item. 
+    - Footer (described under footer)
+- Log in page 
+    - Navbar (described under navbar)
+    - Underneath the navbar the log in form is presented with a field for the user to fill in their email and passwod and a button on the bottom to log in to their account. 
+    - Footer (described under footer)
+- Register page
+    - Navbar (described under navbar)
+    - Underneath the navbar the form for new users is prsesented on this page. There is a field for the user to fill in their email, passwod and to confirm tha password that they have choosen, at the end of the form it is a button to register. 
+    - Footer (described under footer) 
+- Contact page 
+    - Navbar (described under navbar)
+    - Underneath the navbar the contact form is presented, the field for the user to ender in their message is presented and underneath a button to submit the form is avalible. 
+    - Footer (described under footer)
 
 ### Possible Future Features 
 
