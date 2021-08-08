@@ -2,18 +2,22 @@
 {% load static %}
 
 {% block content %}
-<h1>Selected Product page</h1>
+    <h1>Selected Product page</h1>
 
-<div class="row">
-    <div class="col">
-        <img class="card-img-top" src="{{ product.image }}" alt="product image"> 
+    <div class="row">
+        <div class="col">
+            <img class="card-img-top" src="{{ product.image }}" alt="product image"> 
+        </div>
+        <div class="col">
+            <p class="text-capitalize">{{ product.name }}</p>
+            <p>{{ product.size }}</p>
+            <p>{{ product.price }}</p>
+            <p>{{ product.color }}</p>
+        </div>
     </div>
-    <div class="col">
-        <p class="text-capitalize">{{ product.name }}</p>
-        <p>{{ product.size }}</p>
-        <p>{{ product.price }}</p>
-        <p>{{ product.color }}</p>
-    </div>
-</div>
+
+    <form class="form" action="" medtod="POST">
+        {% csrf_token %}
+        <a href="{% url 'add_to_shopping_bag' product.id %}">Add to shopping bag</a>
 
 {% endblock %}
