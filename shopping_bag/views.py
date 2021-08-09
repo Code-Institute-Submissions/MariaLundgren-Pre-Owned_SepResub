@@ -7,14 +7,13 @@ def shopping_bag(request):
     return render(request, 'shopping_bag/shopping_bag.html')
 
 
-def add_to_shopping_bag(request, product_id):
+def add_to_shopping_bag(request, item_id):
 
-    get_object_or_404(Product, pk=product_id)
-
+    product = get_object_or_404(Product, pk=item_id)
+    redirect_url = request.POST.get('redirect_url')
     shopping_bag = request.session.get('shopping_bag', {})
 
-    shopping_bag[product_id]
+    bag[item_id]
 
     request.session['shopping_bag'] = shopping_bag
-    print(request.session["shopping_bag"])
-    return redirect('products')
+    return redirect(redirect_url)
