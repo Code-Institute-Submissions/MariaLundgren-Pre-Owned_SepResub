@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 
 def profile(request):
-    """ A view that renders the bag contents page """
 
-    return render(request, 'profiles/profile.html')
+    template = 'profiles/profile.html'
+    context = {}
+
+    return render(request, template, context)
