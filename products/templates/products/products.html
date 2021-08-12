@@ -7,17 +7,23 @@
     <div class="col padding-top"></div>
 </div>
 
-<h1>Products Page</h1>
-<div class="container mt-10">
+
+<div class="row">
+    <div class="col ms-5">
+        <h1 class="ms-2">Products</h1>
+    </div>
+</div>    
+    
+<div class="container mx-5">
     <div class="row">
-        <div class="col">
             {% for product in products %}
             <div class="col-12 col-md-6 col-lg-3">
-                <div class="card">
+                <div class="card mx-2">
                     <a href="{% url 'selected_product' product.id %}">
                         <img class="card-img-top" src="{{ product.image }}" alt="product image">
                     </a>
                     <div class="card-body">
+                        <i class="far fa-heart fs-5"></i>
                         <p class="text-capitalize">{{ product.name }}</p>
                     </div>
                     <div class="card-footer text-left">
@@ -30,7 +36,6 @@
                 </div>
             </div>
             {% endfor %}
-        </div>
     </div>
 </div>
 {% endblock %}
