@@ -20,8 +20,8 @@ class UserProfile(models.Model):
         return self.user.username
 
 
-# @receiver(post_save, sender=User)
-# def update_or_create_profile(sender, instance, created, **kwargs):
-#    if created:
-#        UserProfile.objects.create(user=instance)
-#    instance.userprofile.save()
+@receiver(post_save, sender=User)
+def update_or_create_profile(sender, instance, created, **kwargs):
+    if created:
+        UserProfile.objects.create(user=instance)
+    instance.userprofile.save()
