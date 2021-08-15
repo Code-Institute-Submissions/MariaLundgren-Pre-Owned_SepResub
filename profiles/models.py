@@ -8,8 +8,7 @@ from django_countries.fields import CountryField
 
 class UserProfile(models.Model):
 
-    default_user = models.OneToOneField
-    default_email = models.CharField(max_length=50, null=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_phone_number = models.CharField(max_length=25, null=True)
     default_street_address = models.CharField(max_length=50, null=True)
     default_postcode = models.CharField(max_length=25, null=True)
@@ -17,11 +16,11 @@ class UserProfile(models.Model):
     default_country = CountryField(blank_label='Country *', null=True)
 
     def __str__(self):
-        return self.user.username
-
+        return self.user
 
 @receiver(post_save, sender=User)
-def update_or_create_profile(sender, instance, created, **kwargs):
+def create_or_update_user_profile(sender, instance, created, **kwargs):
+
     if created:
         UserProfile.objects.create(user=instance)
     instance.userprofile.save()
