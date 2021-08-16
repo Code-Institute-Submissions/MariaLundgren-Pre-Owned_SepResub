@@ -8,4 +8,37 @@
 </div>
 
 <h1>Favourites</h1>
+
+<div class="container mx-5">
+    <div class="row">
+            {% for fav in favourite %}
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="card mx-2">
+                    <a href="{% url 'selected_product' product.id %}">
+                        <img class="card-img-top" src="{{ product.image }}" alt="product image">
+                    </a>
+                    <div class="card-body">
+                        {% if is_favourite %}
+                        <a href="{% url 'favourites' product.id %}">
+                            <i class="fas fa-heart fs-5"></i>
+                        </a>
+                        {% else %}
+                        <a href="{% url 'favourites' product.id %}">
+                            <i class="far fa-heart fs-5"></i>
+                        </a>
+                        {% endif %}
+                        <p class="text-capitalize">{{ product.name }}</p>
+                    </div>
+                    <div class="card-footer text-left">
+                        <div class="row">
+                            <div class="col">
+                                <p>{{ product.price }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+    </div>
+</div>
 {% endblock %}
