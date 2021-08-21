@@ -23,15 +23,6 @@
                         <img class="card-img-top" src="{{ product.image }}" alt="product image">
                     </a>
                     <div class="card-body">
-                        {% if is_favourite %}
-                        <a href="{% url 'favourites' product.id %}">
-                            <i class="fas fa-heart fs-5"></i>
-                        </a>
-                        {% else %}
-                        <a href="{% url 'favourites' product.id %}">
-                            <i class="far fa-heart fs-5"></i>
-                        </a>
-                        {% endif %}
                         <p class="text-capitalize">{{ product.name }}</p>
                     </div>
                     <div class="card-footer text-left">
