@@ -2,7 +2,7 @@ from django import forms
 from .models import Order
 
 
-class OredrForm(forms.ModelForm):
+class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = ('name', 'email', 'phone_number', 'street_address',
@@ -21,7 +21,7 @@ class OredrForm(forms.ModelForm):
             'country': 'Country',
         }
 
-        self.fields['full_name'].widget.attrs['autofocus'] = True
+        self.fields['name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'

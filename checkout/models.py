@@ -25,7 +25,7 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
-        self.order_total = self.orderitems.aggregate(Sum('orderitem_total'))['orderitem_total_sum']
+        self.order_total = self.orderitems.aggregate(Sum('orderitem_total'))['orderitem_total__sum']
         self.save()
 
     def save(self, *args, **kwargs):

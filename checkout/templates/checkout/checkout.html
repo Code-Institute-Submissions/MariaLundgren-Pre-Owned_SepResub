@@ -7,5 +7,47 @@
     <div class="col padding-top"></div>
 </div>
 
-<h1>Checkout</h1>
+    <div class="row">
+        <div class="col">
+            <h1>Checkout</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <p>Fill out the form below to complete your order.</p>
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                {{ order_form|crispy }}
+                <fieldset>
+                    <legend>Payment</legend>
+                    <div class="mb-3" id="card-element"></div>
+                    <div id="card-errors" role="alert"></div>
+                </fieldset>
+                <button is="submit-button">
+                    <span>Complete Order</span>
+                </button>
+            </form>
+        </div>
+        <div class="col-12 col-lg-6">
+            <p>Order Summary</p>
+            {% for item in shopping_bag_items %}
+                <div class="row">
+                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                        <p class="my-0"><strong>Size: </strong>{{ item.product.size }}</p>
+                        <p class="my-0">${{ item.product.price }}</p>
+                </div>
+            {% endfor %}
+            <hr>
+            <h6>Delivery: FREE</h6>
+            <h4 class="mt-4"><strong>Total: {{ total|floatformat:2 }}:-</strong></h4>
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
