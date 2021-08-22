@@ -9,19 +9,49 @@
 
     <div class="row">
         <div class="col">
-            <h1>Shopping Bag</h1>
+            <h1>My Shopping Bag</h1>
         </div>
     </div>
 
     <div class="row">
         <div class="col">
             {%if shopping_bag_items %}
-                <div class="table-responsive">
-                    {{ shopping_bag_items }}
-                </div>
+            <div class="table-responsive rounded">
+                <table class="table table-sm table-borderless">
+                    <thead class="text-black">
+                        <tr>
+                            <th scope="col">Product Info</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    {% for item in shopping_bag_items %}
+                        <tr>
+                            <td class="p-3 w-25">
+                            </td>
+                            <td class="py-3">
+                                <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                <p class="my-0"><strong>Size: </strong>{{ item.product.size }}</p>
+                            </td>
+                            <td class="py-3">
+                                <p class="my-0">${{ item.product.price }}</p>
+                                <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
+                            </td>
+                    {% endfor %}
+                        </tr>
+                        <td colspan="5" class="pt-5 text-right">
+                            <h6>Delivery: FREE</h6>
+                            <h4 class="mt-4"><strong>Grand Total: {{ total|floatformat:2 }}:-</strong></h4>
+                        </td>
             {% else %}
             <p>You don't have any items in your bag yet.</p>
             {% endif %}
+            <hr>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+
 {% endblock %}
