@@ -25,7 +25,7 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
-        self.order_total = self.orderitems.aggregate(Sum('orderitem_total'))['orderitem_total__sum']
+        self.order_total = OrderItem
         self.save()
 
     def save(self, *args, **kwargs):
@@ -40,8 +40,6 @@ class Order(models.Model):
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='orderitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
-    product_size = models.CharField(max_length=2, null=False, blank=False)
-    product_price = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False)
 
     def __str__(self):
         return f'{self.order.order_number}'
