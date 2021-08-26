@@ -6,22 +6,22 @@
     <div class="collapse navbar-collapse product-nav" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item products-item">
-          <a class="nav-link nav-item mx-5 text-white" href="#">New In</a>
+          <a class="nav-link nav-item mx-5 text-white" href="{% url 'products' %}">New In</a>
         </li>
         <li class="nav-item mx-5">
-          <a class="nav-link nav-item text-white" href="#">Tops</a>
+          <a class="nav-link nav-item text-white" href="{% url 'products' %}?category=tops">Tops</a>
         </li>
         <li class="nav-item mx-5">
-          <a class="nav-link nav-item text-white" href="#">Pants</a>
+          <a class="nav-link nav-item text-white" href="{% url 'products' %}?category=pants">Pants</a>
         </li>
         <li class="nav-item mx-5">
-          <a class="nav-link nav-item text-white" href="#">Dresses</a>
+          <a class="nav-link nav-item text-white" href="{% url 'products' %}?category=dresses">Dresses</a>
         </li>
         <li class="nav-item mx-5">
-          <a class="nav-link nav-item text-white" href="#">Skirts</a>
+          <a class="nav-link nav-item text-white" href="{% url 'products' %}?category=skirts">Skirts</a>
         </li>
         <li class="nav-item mx-5">
-          <a class="nav-link nav-item text-white" href="#">Coats & Jackets</a>
+          <a class="nav-link nav-item text-white" href="{% url 'products' %}?category=outerwear">Outerwear</a>
         </li>
       </ul>
     </div>
