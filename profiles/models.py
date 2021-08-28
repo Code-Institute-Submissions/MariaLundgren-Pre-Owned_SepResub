@@ -1,9 +1,20 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, pre_save
 from django.dispatch import receiver
 
 from django_countries.fields import CountryField
+
+
+@receiver(pre_save, sender=User)
+def update_username_from_email(sender, instance, **kwargs):
+    user_email = instance.email
+    username = user_email[:30]
+    n = 1
+    while User.objects.exclude(pk=instance.pk).filter(username=username).exists():
+        n += 1
+        username = user_email[:(29 - len(str(n)))] + '-' + str(n)
+    instance.username = username
 
 
 class UserProfile(models.Model):
