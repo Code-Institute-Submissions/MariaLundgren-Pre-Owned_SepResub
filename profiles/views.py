@@ -8,12 +8,18 @@ def profile(request):
 
     profile = get_object_or_404(UserProfile, user=request.user)
 
+    if request.method == 'POST':
+        form = UserProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+
     form = UserProfileForm(instance=profile)
+    orders = profile.orders.all()
 
     template = 'profiles/profile.html'
     context = {
         'form': form,
-        'on_profile_page': True
+        'orders': orders,
     }
 
     return render(request, template, context)
