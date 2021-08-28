@@ -1,0 +1,1 @@
+web: gunicorn pre-owned.wsgi:application
