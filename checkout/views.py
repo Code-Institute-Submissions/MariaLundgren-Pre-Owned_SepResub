@@ -4,7 +4,7 @@ from django.conf import settings
 from .forms import OrderForm
 from shopping_bag.context import shopping_bag_contents
 from products.models import Product
-from .models import Order, OrderItem
+from .models import Order, OrderLineItem
 
 import stripe
 
@@ -32,11 +32,11 @@ def checkout(request):
             for item_id, item in shopping_bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
-                    order_item = OrderItem(
+                    order_line_item = OrderLineItem(
                             order=order,
                             product=product,
                         )
-                    order_item.save()
+                    order_line_item.save()
                 except Product.DoesNotExist:
                     messages.errror(request, (
                         "One of the products in your bag wasn't found in our database.")

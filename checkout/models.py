@@ -25,7 +25,7 @@ class Order(models.Model):
         return uuid.uuid4().hex.upper()
 
     def update_total(self):
-        self.order_total = OrderItem
+        self.order_total = OrderLineItem
         self.save()
 
     def save(self, *args, **kwargs):
@@ -37,7 +37,7 @@ class Order(models.Model):
         return self.order_number
 
 
-class OrderItem(models.Model):
+class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='orderitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
 
