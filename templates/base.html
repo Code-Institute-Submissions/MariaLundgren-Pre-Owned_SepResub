@@ -58,8 +58,21 @@
           </div>
         </div>
         <ul class="navbar-nav ms-auto pe-3">
-          <li class="nav-item active">
-            <a class="nav-link px-2" href="{% url 'profile' %}"><i class="fas fa-user text-white fs-2"></i></a>
+          <li class="nav-item">
+            <div class="dropdown">
+              <a type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-user text-white fs-2"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                {% if request.user.is_authenticated %}
+                  <li><button class="dropdown-item" type="button"><a href="{% url 'profile' %}" class="text-decoration-none">My Profile</a></button></li>
+                  <li><button class="dropdown-item" type="button"><a href="{% url 'account_logout' %}" class="text-decoration-none">LogOut</a></button></li>
+                {% else %}
+                  <li><button class="dropdown-item" type="button"><a href="{% url 'account_signup' %}" class="text-decoration-none">Register</a></button></li>
+                  <li><button class="dropdown-item" type="button"><a href="{% url 'account_login' %}" class="text-decoration-none">Login</a></button></li>
+                {% endif %}
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link px-2" href="{% url 'favourites' %}"><i class="fas fa-heart text-white fs-2"></i></a>
