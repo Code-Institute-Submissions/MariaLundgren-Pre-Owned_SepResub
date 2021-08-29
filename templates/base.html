@@ -26,15 +26,37 @@
 
     <title>Pre-Owned</title>
   </head>
-
   <body>
     <header class="container-fluid fixed-top">
       <nav class="navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand me-5" href="{% url 'home' %}"><h1>Pre-Owned</h1></a>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn text-white" type="submit"><i class="fas fa-search"></i></button>
-        </form>
+        <div class="container">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse product-nav" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item products-item">
+                <a class="nav-link nav-item mx-5 text-white" href="{% url 'products' %}">All Products</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link nav-item text-white" href="{% url 'products' %}?category=tops">Tops</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link nav-item text-white" href="{% url 'products' %}?category=pants">Pants</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link nav-item text-white" href="{% url 'products' %}?category=dresses">Dresses</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link nav-item text-white" href="{% url 'products' %}?category=skirts">Skirts</a>
+              </li>
+              <li class="nav-item mx-5">
+                <a class="nav-link nav-item text-white" href="{% url 'products' %}?category=outerwear">Outerwear</a>
+              </li>
+            </ul>
+          </div>
+        </div>
         <ul class="navbar-nav ms-auto pe-3">
           <li class="nav-item active">
             <a class="nav-link px-2" href="{% url 'profile' %}"><i class="fas fa-user text-white fs-2"></i></a>
@@ -50,7 +72,6 @@
           </li>
         </ul>
       </nav>
-      {% include 'includes/navbar.html' %}
     </header>
 
     {% if messages %}
