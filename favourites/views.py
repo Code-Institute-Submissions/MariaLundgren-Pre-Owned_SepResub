@@ -10,13 +10,25 @@ def favourites(request):
 
     return render(request, template)
 
+
 def add_favourite(request, product_id):
 
     if request.method == "POST":
         product = get_object_or_404(Product, pk=product_id)
-        favourites = get_object_or_404(UsersFavourites, user=request.user)
+        favourites = get_object_or_404(favourites, user=request.user)
         if product not in favourites.products.all():
             favourites.products.add(product)
             return HttpResponse(status=200)
     else:
         return redirect(reverse("products"))
+
+
+def remove_favourite(request, product_id):
+    if request.method == "POST":
+        product = get_object_or_404(Product, pk=product_id)
+        favourites = get_object_or_404(favourites, user=request.user)
+        if product in favourites.products.all():
+            favourites.products.pop(product)
+            return HttpResponse(status=200)
+    else:
+        return redirect(reverse("favourites"))
