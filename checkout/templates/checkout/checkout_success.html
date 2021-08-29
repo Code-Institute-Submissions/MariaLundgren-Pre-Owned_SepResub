@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        {% for item in order.lineitems %}
+        {% for item in order.orderitems.all %}
         <div class="row">
             <div class="col-12 col-md-4">
                 <p>{{ item.product.name }} {{ item.product.size }}</p>
@@ -137,8 +137,5 @@
             <p>{{ order.order_total }}</p>
         </div>
     </div>
-</div>
-</div>
-</div>
 {% endblock %}
 
