@@ -5,6 +5,7 @@ from .forms import OrderForm
 from shopping_bag.context import shopping_bag_contents
 from products.models import Product
 from .models import Order, OrderLineItem
+from profiles.models import UserProfile, User
 
 import stripe
 
