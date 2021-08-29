@@ -1,25 +1,22 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpResponse
+
+from .models import Favourites
 from products.models import Product
 
 
-def favourites(request, product_id):
+def favourites(request):
 
-    product = get_object_or_404(Product, pk=product_id)
+    template = "favourites/favourites.html"
 
-    if product.favourites.filter(id=request.user.id).exists():
-        product.favourites.remove(request.user)
+    return render(request, template)
+
+def add_favourite(request, product_id):
+
+    if request.method == "POST":
+        product = get_object_or_404(Product, pk=product_id)
+        favourites = get_object_or_404(UsersFavourites, user=request.user)
+        if product not in favourites.products.all():
+            favourites.products.add(product)
+            return HttpResponse(status=200)
     else:
-        product.favourites.add(request.user)
-    return render(request, 'favourites/favourites.html')
-
-
-def favourite_list(request):
-    user = request.user
-
-    favourites = user.favourites.all()
-
-    context = {
-        'favourites': favourites,
-    }
-
-    return render(request, 'favourites/favourite_list.html', context)
+        return redirect(reverse("products"))
