@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', ''),
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = ['pre-owned.herokuapp.com', 'localhost']
 
@@ -207,12 +207,12 @@ if 'USE_AWS' in os.environ:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# stripe 
+# stripe
 STRIPE_CURRENCY = 'sek'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 
-#emails
+# emails
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAUL_FROM_EMAIL = 'pre-owned@example.com'
