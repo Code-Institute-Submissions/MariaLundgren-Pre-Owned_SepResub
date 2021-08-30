@@ -21,8 +21,8 @@
                 <table class="table table-sm table-borderless">
                     <thead class="text-black">
                         <tr>
-                            <th scope="col">Product Info</th>
                             <th scope="col"></th>
+                            <th scope="col">Product Info</th>
                             <th scope="col">Price</th>
                         </tr>
                     </thead>
@@ -47,14 +47,10 @@
                             <hr>
                             <h6>Delivery: FREE</h6>
                             <h4 class="mt-4"><strong>Total: {{ total|floatformat:2 }}:-</strong></h4>
+                            <a href="{% url 'checkout' %}" class="btn btn-outline-dark my-2">
+                                <span>Secure Checkout</span>
+                            </a>
                         </td>
-                        <tr>
-                            <td>
-                                <a href="{% url 'checkout' %}" class="btn btn-outline-dark">
-                                    <span>Secure Checkout</span>
-                                </a>
-                            </td>
-                        </tr>
             {% else %}
             <p>You don't have any items in your bag yet.</p>
             {% endif %}
