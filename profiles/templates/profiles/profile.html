@@ -7,28 +7,34 @@
     <div class="col padding-top"></div>
 </div>
 
-<h1>Profile page</h1>
+<div class="container">
 <div class="row">
-    <div class="col-12 col-lg-6">
-        <p>Default delivery information</p>
+    <div class="col-12">
+        <h1>My Profile</h1>
+        <hr>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-lg-6 my-2">
+        <h2>Default delivery information</h2>
         <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
             {% csrf_token %}
             {{ form|crispy }}
-            <button>Update Information</button>
+            <button class="btn btn-outline-dark">Update Information</button>
         </form>
     </div>
-    <div class="col-12 col-lg-6">
-        <p>Order History</p>
+    <div class="col-12 col-lg-6 my-2">
+        <h2>Order History</h2>
         <div class="table-responsive">
             <table>
                 <thead>
                     <tr>
-                        <th>Order Name</th>
+                        <th>Order</th>
                         <th>Date</th>
                         <th>Items</th>
                         <th>Order Total</th>
                     </tr>
-                </thead>
                 <tbody>
                     {% for order in orders %}
                     <tr>
@@ -39,11 +45,11 @@
                         </td>
                         <td>{{ order.date }}</td>
                         <td>
-                            <ul>
-                                {% for item in order.lineitems.all %}
-                                <li>
-                                    Size {{ item.product.size }} 
+                            <ul class="list-unstyled">
+                                {% for item in order.orderitems.all %}
+                                <li class="text-capitalize">
                                     {{ item.product.name }}
+                                    Size {{ item.product.size }} 
                                 </li>
                                 {% endfor %}
                             </ul>
@@ -52,8 +58,10 @@
                     </tr>
                     {% endfor %}
                 </tbody>
+            </thead>
             </table>
         </div>
     </div>
+</div>
 </div>
 {% endblock %}
