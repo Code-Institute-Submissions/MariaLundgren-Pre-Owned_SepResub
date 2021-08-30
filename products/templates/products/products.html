@@ -5,30 +5,29 @@
 
 <div class="row">
     <div class="col padding-top"></div>
-</div>
-
-
-<div class="row">
-    <div class="col ms-5">
-        <h1 class="ms-2">Products</h1>
-    </div>
-</div>    
+</div>  
     
 <div class="container">
     <div class="row">
+        <div class="col">
+            <h1>Products</h1>
+            <hr>
+        </div>
+    </div>  
+    <div class="row">
             {% for product in products %}
             <div class="col-12 col-md-6 col-lg-3">
-                <div class="card mx-2">
+                <div class="card my-2">
                     <a href="{% url 'selected_product' product.id %}">
                         <img class="card-img-top" src="{{ product.image.url }}" alt="product image">
                     </a>
                     <div class="card-body">
-                        <p class="text-capitalize">{{ product.name }}</p>
                     </div>
                     <div class="card-footer text-left">
                         <div class="row">
                             <div class="col">
-                                <p>{{ product.price }}</p>
+                                <p class="text-capitalize">{{ product.name }}</p>
+                                <p>{{ product.price }}:-</p>
                             </div>
                         </div>
                     </div>
