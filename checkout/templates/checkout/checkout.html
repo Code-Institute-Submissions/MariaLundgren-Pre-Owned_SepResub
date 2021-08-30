@@ -7,42 +7,45 @@
     <div class="col padding-top"></div>
 </div>
 
-    <div class="row">
-        <div class="col">
-            <h1>Checkout</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Checkout</h1>
+                <hr>
+            </div>
         </div>
-    </div>
 
     <div class="row">
-        <div class="col-12 col-lg-6">
-            <p>Fill out the form below to complete your order.</p>
+        <div class="col-12 col-lg-6 my-2 checkout-form">
+            <h2>Fill out the form below to complete your order.</h2>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 {{ order_form|crispy }}
                 <fieldset>
-                    <legend>Payment</legend>
+                    <h3>Payment</h3>
                     <div class="mb-3" id="card-element"></div>
                     <div id="payment-errors" class="text-danger" role="alert"></div>
                 </fieldset>
-                <button is="submit-button">
+                <button is="submit-button" class="btn btn-outline-dark">
                     <span>Complete Order</span>
                 </button>
             </form>
         </div>
-        <div class="col-12 col-lg-6">
-            <p>Order Summary</p>
+        <div class="col-12 col-lg-6 my-2 order-summary">
+            <h2>Order Summary</h2>
             {% for item in shopping_bag_items %}
                 <div class="row">
-                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                        <p class="my-0 text-capitalize"><strong>{{ item.product.name }}</strong></p>
                         <p class="my-0"><strong>Size: </strong>{{ item.product.size }}</p>
-                        <p class="my-0">${{ item.product.price }}</p>
+                        <p class="my-0">{{ item.product.price }}:-</p>
                 </div>
             {% endfor %}
             <hr>
-            <h6>Delivery: FREE</h6>
-            <h4 class="mt-4"><strong>Total: {{ total|floatformat:2 }}:-</strong></h4>
+            <p><strong>Delivery: FREE</strong></p>
+            <h3 class="mt-4">Total: {{ total|floatformat:2 }}:-</h3>
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}
