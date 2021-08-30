@@ -75,3 +75,10 @@
   max-width: 400px;
   height: auto;
 }
+
+/* Shopping Bag */
+
+.bag-img {
+  max-width: 200px;
+  height: auto;
+}
