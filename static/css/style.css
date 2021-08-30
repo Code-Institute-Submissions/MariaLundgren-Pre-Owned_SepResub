@@ -13,6 +13,14 @@
     display: none;
 }
 
+/* Toasts */
+.message-container {
+  position: fixed;
+  top: 72px;
+  right: 15px;
+  z-index: 999999;
+}
+
 /* Checkout */
 
 .StripeElement {
@@ -35,10 +43,10 @@
   background-color: #fefde5 !important;
 }
 
-/* Toasts */
-.message-container {
-  position: fixed;
-  top: 72px;
-  right: 15px;
-  z-index: 999999;
+/* Contact */
+.contact-form {
+  color: #000;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
