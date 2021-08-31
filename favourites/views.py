@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpR
 
 from .models import Favourites
 from products.models import Product
+from django.contrib.auth.models import User
 
 
 def favourites(request):
@@ -14,11 +15,13 @@ def favourites(request):
 def add_favourite(request, product_id):
 
     if request.method == "POST":
+        redirect_url = request.POST.get('redirect_url')
         product = get_object_or_404(Product, pk=product_id)
-        favourites = get_object_or_404(favourites, user=request.user)
-        if product not in favourites.products.all():
-            favourites.products.add(product)
-            return HttpResponse(status=200)
+        user = get_object_or_404(User, user=request.user)
+        favourites.products.add(product)
+        record = Favourites(product=product, user=user)
+        record.save()
+        return redirect(redirect_url)
     else:
         return redirect(reverse("products"))
 
@@ -26,7 +29,7 @@ def add_favourite(request, product_id):
 def remove_favourite(request, product_id):
     if request.method == "POST":
         product = get_object_or_404(Product, pk=product_id)
-        favourites = get_object_or_404(favourites, user=request.user)
+        favourites = get_object_or_404(Favourites, user=request.UserProfile)
         if product in favourites.products.all():
             favourites.products.pop(product)
             return HttpResponse(status=200)
