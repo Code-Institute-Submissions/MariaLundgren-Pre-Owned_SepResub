@@ -113,6 +113,22 @@ The font chosen for this project is Permanent Marker for the logo and Lato for t
 
 ## Thechnologies Used 
 
+- Django 
+- HTML5 used to make the structure of the website.
+- CSS3 used to add style to the project.
+- Python3 used as the backend language.
+- JQuery used to create interactive elements.
+- Heroku used to deploy the live website.
+- Bootstrap
+- Font Awesome used for the icons in the footer.
+- Google Fonts was used to import the fonts used in the project.
+- Gitpod used to develop the project.
+- Github used to store the source code for the project.
+- Figma used to make wireframes for the project.
+- Stripe API
+- Django Secret Key Generator
+
+
 ## Testing
 
 ## Deployment
