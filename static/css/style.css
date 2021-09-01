@@ -92,18 +92,14 @@
 
 /* Footer */
 footer {
-  height: 100px;
+  height: 75px;
   background-color: #1f1f1f;
-}
-
-.contact {
-  padding: 2rem 1rem 0 1rem;
 }
 
 .social {
   color: #fff;
   font-size: 30px;
-  padding: 2rem 1rem 0 1rem;
+  padding: 1rem;
 }
 
 .social:hover {
