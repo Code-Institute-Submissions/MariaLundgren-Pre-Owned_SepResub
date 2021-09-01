@@ -7,6 +7,11 @@
     height: 125px;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* Navbar */
 
 .nav-icon:hover {
