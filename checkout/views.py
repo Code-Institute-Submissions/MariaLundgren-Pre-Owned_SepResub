@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 from .forms import OrderForm
 from shopping_bag.context import shopping_bag_contents
@@ -86,6 +87,11 @@ def checkout_success(request, order_number):
     order.user_profile = profile
     order.save()
 
+    shopping_bag = request.session.get('shopping_bag', {})
+    total = 0
+    for item_id, item_data in shopping_bag.items():
+        product = get_object_or_404(Product, pk=item_id)
+        total += product.price
 
     if 'shopping_bag' in request.session:
         del request.session['shopping_bag']
@@ -93,6 +99,7 @@ def checkout_success(request, order_number):
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
+        'total': total,
     }
 
     return render(request, template, context)

@@ -3,6 +3,7 @@ import uuid
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
+from django.shortcuts import get_object_or_404
 
 from products.models import Product
 from django_countries.fields import CountryField
@@ -25,12 +26,7 @@ class Order(models.Model):
         max_digits=10, decimal_places=2, null=False, default=0)
 
     def _generate_order_number(self):
-        return uuid.uuid4().hex.upper()    
-
-
-    def update_total(self):
-        self.order_total = OrderLineItem
-        self.save()
+        return uuid.uuid4().hex.upper()
 
     def save(self, *args, **kwargs):
         if not self.order_number:
