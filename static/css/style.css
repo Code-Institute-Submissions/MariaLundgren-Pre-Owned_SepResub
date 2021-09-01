@@ -82,3 +82,24 @@
   max-width: 100px;
   height: auto;
 }
+
+
+/* Footer */
+footer {
+  height: 100px;
+  background-color: #1f1f1f;
+}
+
+.contact {
+  padding: 2rem 1rem 0 1rem;
+}
+
+.social {
+  color: #fff;
+  font-size: 30px;
+  padding: 2rem 1rem 0 1rem;
+}
+
+.social:hover {
+  color: #9CD3BF;
+}

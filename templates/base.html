@@ -26,11 +26,27 @@
 
     <title>Pre-Owned</title>
   </head>
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <header class="container-fluid fixed-top">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark vw-100">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Pre-Owned</a>
+          <div class="dropdown navbar-brand">
+            <a type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user text-white fs-2"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              {% if request.user.is_authenticated %}
+                <li><button class="dropdown-item" type="button"><a href="{% url 'profile' %}" class="text-decoration-none text-dark">My Profile</a></button></li>
+                <li><button class="dropdown-item" type="button"><a href="{% url 'account_logout' %}" class="text-decoration-none text-dark">LogOut</a></button></li>
+              {% else %}
+                <li><button class="dropdown-item" type="button"><a href="{% url 'account_signup' %}" class="text-decoration-none text-dark">Register</a></button></li>
+                <li><button class="dropdown-item" type="button"><a href="{% url 'account_login' %}" class="text-decoration-none text-dark">Login</a></button></li>
+              {% endif %}
+            </ul>
+          </div>
+          <a class="nav-link px-2 navbar-brand" href="{% url 'favourites' %}"><i class="fas fa-heart text-white fs-2"></i></a>
+          <a class="nav-link px-2 navbar-brand" href="{% url 'shopping_bag' %}"><i class="fas fa-shopping-bag text-white fs-2"></i></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -53,33 +69,6 @@
               </li>
               <li class="nav-item mx-5">
                 <a class="nav-link text-white" href="{% url 'products' %}?category=outerwear">Outerwear</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav ms-auto pe-3">
-              <li class="nav-item">
-                <div class="dropdown">
-                  <a type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-user text-white fs-2"></i>
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    {% if request.user.is_authenticated %}
-                      <li><button class="dropdown-item" type="button"><a href="{% url 'profile' %}" class="text-decoration-none text-dark">My Profile</a></button></li>
-                      <li><button class="dropdown-item" type="button"><a href="{% url 'account_logout' %}" class="text-decoration-none text-dark">LogOut</a></button></li>
-                    {% else %}
-                      <li><button class="dropdown-item" type="button"><a href="{% url 'account_signup' %}" class="text-decoration-none text-dark">Register</a></button></li>
-                      <li><button class="dropdown-item" type="button"><a href="{% url 'account_login' %}" class="text-decoration-none text-dark">Login</a></button></li>
-                    {% endif %}
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-2" href="{% url 'favourites' %}"><i class="fas fa-heart text-white fs-2"></i></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-2" href="{% url 'shopping_bag' %}"><i class="fas fa-shopping-bag text-white fs-2"></i></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link px-2" href="{% url 'contact' %}"><i class="fas fa-envelope text-white fs-2"></i></a>
               </li>
             </ul>
           </div>
@@ -110,6 +99,28 @@
 
     {% block content %}
     {% endblock %}
+
+    <footer class="fixed-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center justify-content-md-end">
+            <a href="https://instagram.com/" target="_blank">
+              <i class="fab fa-instagram social" aria-hidden="true"></i>
+              <span class="sr-only">Instagram</span>
+            </a>
+            <a href="https://facebook.com/" target="_blank">
+              <i class="fab fa-facebook-square social" aria-hidden="true"></i>
+              <span class="sr-only">Facebook</span>
+            </a>
+            <a href="https://linkedin.com/" target="_blank">
+              <i class="fab fa-linkedin social" aria-hidden="true"></i>
+              <span class="sr-only">Linkedin</span>
+            </a>
+            <a href="{% url 'contact' %}"><i class="fas fa-envelope social"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     {% block postloadjs %}
     <script type="text/javascript">
