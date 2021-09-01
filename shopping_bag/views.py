@@ -15,6 +15,7 @@ def add_to_shopping_bag(request, item_id):
     shopping_bag = request.session.get('shopping_bag', {})
 
     item = request.POST.get('item')
+    shopping_bag[item_id] = item
     messages.success(request, f'Added {product.name} to your bag')
 
     request.session['shopping_bag'] = shopping_bag
