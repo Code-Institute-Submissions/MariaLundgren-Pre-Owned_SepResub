@@ -7,9 +7,19 @@ from django.contrib.auth.models import User
 
 def favourites(request):
 
+    favourites = None
+    try:
+        favourites = Favourites.objects.filter(user=request.user)
+    except Favourites.DoesNotExist:
+        pass
+
+    context = {
+        'favourites': favourites,
+    }
+
     template = "favourites/favourites.html"
 
-    return render(request, template)
+    return render(request, template, context)
 
 
 def add_favourite(request, product_id):
