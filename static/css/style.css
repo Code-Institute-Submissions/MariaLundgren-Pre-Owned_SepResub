@@ -13,6 +13,11 @@
   color: #9CD3BF !important;
 }
 
+.logo {
+  font-family: "Permanent Marker", sans-serif;
+  color: #9CD3BF !important;
+}
+
 /* Allath forms */ 
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -23,7 +28,7 @@
 .message-container {
   position: fixed;
   top: 72px;
-  right: 15px;
+  left: 15px;
   z-index: 999999;
 }
 
