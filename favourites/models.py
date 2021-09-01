@@ -12,9 +12,9 @@ class Favourites(models.Model):
     product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.CASCADE)
 
 
-@receiver(post_save, sender=User)
-def create_or_update_Favourites(sender, instance, created, **kwargs):
-
-    if created:
-        Favourites.objects.create(user=instance)
-    instance.favourites.save()
+# @receiver(post_save, sender=User)
+# def create_or_update_Favourites(sender, instance, created, **kwargs):
+#
+#    if created:
+#        Favourites.objects.create(user=instance)
+#    instance.favourites.save()
