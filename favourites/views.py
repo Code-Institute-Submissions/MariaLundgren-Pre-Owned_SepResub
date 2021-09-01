@@ -24,7 +24,7 @@ def favourites(request):
 
     return render(request, template, context)
 
-
+@login_required
 def add_favourite(request, product_id):
 
     if request.method == "POST":
@@ -45,6 +45,7 @@ def remove_favourite(request, product_id):
         product = get_object_or_404(Product, pk=product_id)
         favourites = get_object_or_404(Favourites, product=product, user=request.user)
         favourites.delete()
+        messages.success(request, f'Removed product to your favorites')
         return HttpResponse(status=200)
     else:
         return redirect(reverse("favourites"))
