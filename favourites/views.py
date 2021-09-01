@@ -4,6 +4,7 @@ from .models import Favourites
 from products.models import Product
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 @login_required
@@ -33,6 +34,7 @@ def add_favourite(request, product_id):
         user = request.user
         record = Favourites(product_id=product_id, user=user)
         record.save()
+        messages.success(request, f'Added product to your favorites')
         return redirect(redirect_url)
     else:
         return redirect(reverse("products"))
