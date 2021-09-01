@@ -152,3 +152,10 @@ footer {
 .social:hover {
   color: #9CD3BF;
 }
+
+/* Profile */ 
+
+.order-history {
+  max-height: 360px;
+  overflow: auto;
+}
