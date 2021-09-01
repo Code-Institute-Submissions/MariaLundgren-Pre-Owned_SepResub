@@ -39,9 +39,8 @@ def add_favourite(request, product_id):
 def remove_favourite(request, product_id):
     if request.method == "POST":
         product = get_object_or_404(Product, pk=product_id)
-        favourites = get_object_or_404(Favourites, user=request.UserProfile)
-        if product in favourites.products.all():
-            favourites.products.pop(product)
-            return HttpResponse(status=200)
+        favourites = get_object_or_404(Favourites, product=product, user=request.user)
+        favourites.delete()
+        return HttpResponse(status=200)
     else:
         return redirect(reverse("favourites"))
