@@ -7,10 +7,16 @@
     height: 125px;
 }
 
+/* Navbar */
+
+.nav-icon:hover {
+  color: #9CD3BF !important;
+}
+
 /* Allath forms */ 
 
 .allauth-form-inner-content label:not([for='id_remember']) {
-    display: none;
+  display: none;
 }
 
 /* Toasts */
