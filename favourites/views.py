@@ -3,8 +3,10 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse, HttpR
 from .models import Favourites
 from products.models import Product
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def favourites(request):
 
     favourites = None
