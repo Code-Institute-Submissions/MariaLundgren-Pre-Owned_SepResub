@@ -18,6 +18,10 @@
   color: #9CD3BF !important;
 }
 
+h1, h2, h3, p {
+  font-family: "Lato", sans-serif;
+}
+
 /* Allath forms */ 
 
 .allauth-form-inner-content label:not([for='id_remember']) {
