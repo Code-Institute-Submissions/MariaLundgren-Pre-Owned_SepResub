@@ -12,6 +12,10 @@ body {
   overflow-x: hidden;
 }
 
+h1, h2, h3, p {
+  font-family: "Lato", sans-serif;
+}
+
 /* Navbar */
 
 .nav-icon:hover {
@@ -23,8 +27,9 @@ body {
   color: #9CD3BF !important;
 }
 
-h1, h2, h3, p {
-  font-family: "Lato", sans-serif;
+.nav-container {
+  width: 100vw;
+  background-color: #1f1f1f;
 }
 
 /* Allath forms */ 
