@@ -47,7 +47,7 @@
     $('.remove-product').click(function(e) {
         let csrfToken = "{{ csrf_token }}";
         let productId = $(this).attr('id').split('remove_')[1];
-        let url = `/favourite/remove/${productId}/`;
+        let url = `/favourites/remove/${productId}/`;
         var data = {'csrfmiddlewaretoken': csrfToken};
 
         $.post(url, data)
