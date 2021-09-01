@@ -46,6 +46,34 @@ h1, h2, h3, p {
   z-index: 999999;
 }
 
+/* Home */
+
+.home-logo {
+  font-family: "Permanent Marker", sans-serif;
+  color: #9CD3BF;
+  font-size: 700%;
+}
+
+.home-text {
+  font-family: "Permanent Marker", sans-serif;
+  color: #1f1f1f;
+  font-size: 300%;
+}
+
+.now {
+  color: #9CD3BF;
+}
+
+.link-text {
+  color: #1f1f1f;
+  font-weight: 700;
+  font-size: 120%;
+}
+
+.link-text:hover {
+  color: #9CD3BF;
+}
+
 /* Checkout */
 
 .StripeElement {
