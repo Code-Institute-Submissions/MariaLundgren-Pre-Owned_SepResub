@@ -113,20 +113,20 @@ The font chosen for this project is Permanent Marker for the logo and Lato for t
 
 ## Thechnologies Used 
 
-- Django 
-- HTML5 used to make the structure of the website.
-- CSS3 used to add style to the project.
-- Python3 used as the backend language.
-- JQuery used to create interactive elements.
-- Heroku used to deploy the live website.
-- Bootstrap
-- Font Awesome used for the icons in the footer.
-- Google Fonts was used to import the fonts used in the project.
-- Gitpod used to develop the project.
-- Github used to store the source code for the project.
-- Figma used to make wireframes for the project.
-- Stripe API
-- Django Secret Key Generator
+- [Django](https://www.djangoproject.com/) used to create the project.  
+- [HTML5](https://en.wikipedia.org/wiki/HTML5) used to make the structure of the website.
+- [CSS3](https://en.wikipedia.org/wiki/CSS) used to add style to the project.
+- [Python3](https://www.python.org/) used as the backend language.
+- [JQuery](https://jquery.com/) used to create interactive elements.
+- [Heroku](https://id.heroku.com/login) used to deploy the live website.
+- [Bootstrap](https://getbootstrap.com/) used to style certain elements and to make the website responsive.
+- [Font Awesome](https://fontawesome.com/) used for the icons in the footer.
+- [Google Fonts](https://fonts.google.com/) was used to import the fonts used in the project.
+- [Gitpod](https://gitpod.io/) used to develop the project.
+- [Github](https://github.com/) used to store the source code for the project.
+- [Figma](https://www.figma.com/) used to make wireframes for the project.
+- [Stripe API](https://stripe.com/en-se) used for payments.
+- [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/) used to generate a django secret key.
 
 
 ## Testing
