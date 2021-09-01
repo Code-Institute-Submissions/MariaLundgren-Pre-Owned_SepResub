@@ -133,7 +133,16 @@ The font chosen for this project is Permanent Marker for the logo and Lato for t
 
 ## Deployment
 
-### Deploy 
+### Deploy
+
+1. Create an account on Heroku if you don't have one.
+2. Log in to your Heroku account and to the right on the screen and choose **Create New App**.
+3. Fill in a unique name in the app name text field.
+4. Choose the region closest to you in the choose a region dropdown list.
+5. Click on **Create App**.
+6. Go to the recourese tab and in the search field search for postgres and choose **Heroku Postgres**. 
+7. For plan choose 'Hobby Dev - Free' and click on **Submit Order Form**. 
+8. Go back to your teminal and install Dj Database by typing `pip3 install dj_database_url` in you terminal. 
 
 ### Run code locally 
 
