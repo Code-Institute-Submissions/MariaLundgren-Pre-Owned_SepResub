@@ -40,7 +40,7 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
               {% if request.user.is_authenticated %}
                 <li><button class="dropdown-item" type="button"><a href="{% url 'profile' %}" class="text-decoration-none text-dark">My Profile</a></button></li>
-                <li><button class="dropdown-item" type="button"><a href="{% url 'account_logout' %}" class="text-decoration-none text-dark">LogOut</a></button></li>
+                <li><button class="dropdown-item" type="button"><a href="{% url 'account_logout' %}" class="text-decoration-none text-dark">Log Out</a></button></li>
               {% else %}
                 <li><button class="dropdown-item" type="button"><a href="{% url 'account_signup' %}" class="text-decoration-none text-dark">Register</a></button></li>
                 <li><button class="dropdown-item" type="button"><a href="{% url 'account_login' %}" class="text-decoration-none text-dark">Login</a></button></li>
