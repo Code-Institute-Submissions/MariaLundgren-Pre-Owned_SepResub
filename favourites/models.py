@@ -11,9 +11,6 @@ class Favourites(models.Model):
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.user
-
 
 @receiver(post_save, sender=User)
 def create_or_update_Favourites(sender, instance, created, **kwargs):

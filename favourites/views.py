@@ -17,9 +17,9 @@ def add_favourite(request, product_id):
     if request.method == "POST":
         redirect_url = request.POST.get('redirect_url')
         product = get_object_or_404(Product, pk=product_id)
-        user = get_object_or_404(User, user=request.user)
-        favourites.products.add(product)
-        record = Favourites(product=product, user=user)
+        product = request.POST.get('product')
+        user = request.user
+        record = Favourites(product_id=product_id, user=user)
         record.save()
         return redirect(redirect_url)
     else:
