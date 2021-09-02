@@ -73,24 +73,29 @@ The font chosen for this project is Permanent Marker for the logo and Lato for t
 - Selected product page 
     - Navbar (described under navbar)
     - Underneath the navbar an image of the selected product is presented and all the information about the product, the title size, price and color of the product.
-    - On this page the heart for adding/removing the item from favorites are also presented to registered users.
+    - On this page a button for adding the item from favorites are also presented.
     - On this page there is also a button for the user to add the product to their shopping bag. 
     - Footer (described under footer)
-- My bag page 
+- My shopping bag page 
     - Navbar (described under navbar)
-    - Underneath the navbar on this page all the products added to the user's bag are presented, all the information of the products, and the heart to add/remove from favourites. There also is a 
-    cross for the user to remove the item from the shopping bag. 
+    - Underneath the navbar on this page all the products added to the user's bag are presented, information of the products. There also is a 
+    link for the user to remove the item from the shopping bag. 
     - Underneath the items in the shopping bag there are field for the details nessesary for completing the purchase, shipping and payment details. And at the end above the footer a button to complete the burchase is presented. 
+    - Underneath the items in the shopping bag a button to go to checkout is presented. 
     - Footer (described under footer)
+- Checkout page 
+    - On the checkout page to the left there is a form where the user have to fill out all the required infromation and a payment form where the user fills out their card details. Underneath the card retails is a complete order button. 
+    - To the left is a order summary. 
+    - When clicking on the button the user goes to the order success template where all the order information is presented. 
 - My profile page
     - Navbar (described under navbar)
     - Under the navbar the information about the user is presented in a form where the user also can update their information. 
-    - Next to the profile information is the user's orders presented with ordernumber, date, numbers of items and price. 
+    - Next to the profile information is the user's orders presented. 
     - Underneath the profile information and the orders the messages that the user have sent to the site owners are avalible toghether with the responses that the users have recived. 
     - Footer (described under footer)
 - My favorites page
     - Navbar (described under navbar)
-    - Underneth the navbar on this page all the items that the users have added to their product page are shown. There is an image of the product, with the heart to add/remove the item from favourites, the title, price and size of item. 
+    - Underneth the navbar on this page all the items that the users have added to their favorites page are shown. There is an image of the product, and a link to remove the product from favorites, the title, price and size of item. 
     - Footer (described under footer)
 - Log in page 
     - Navbar (described under navbar)
