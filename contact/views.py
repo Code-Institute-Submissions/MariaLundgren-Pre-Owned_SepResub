@@ -10,3 +10,14 @@ def contact(request):
     form = ContactForm()
     context = {'form': form}
     return render(request, 'contact/contact.html', context)
+
+
+def view_conversation(request, user):
+
+    contact = None
+    contact = contact.objects.filter(user=request.user)
+
+    context = {
+        'contact': contact,
+    }
+    return render(request, context)
