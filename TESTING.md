@@ -2,10 +2,20 @@
 
 ### Validation 
 
-To test the CSS the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used.
-The CSS validator showed no errors or warnings.
+- To test the CSS the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used.
+    The CSS validator showed no errors or warnings.
 
 ![CSS Validation](media/css-validator.jpg)
+
+- To test the HTML the W3C Markup Validation Service was used.
+    The HTML validator showed no errors or warnings.
+
+![HTML Validation](media/html-validator.jpg)
+
+- To test JQuery JSHint was used.
+    JSHint showed no errors or warnings.
+
+- Flake 8 was used to test the python code, the warnings that are left are mostly from the python migrate files or variables in the settings that are to long and cant be devided in too two rows or to avouid using null=true on Charfields.
 
 ### Features
 
@@ -127,8 +137,27 @@ The CSS validator showed no errors or warnings.
 
 ### Responsiveness
 
+In Chrome DevTools following devices have been tested for responsiveness:
+
+Moto 4
+Galaxy S5
+Pixel 2
+Pixel 2 XL
+iPhone 5/SE
+iPhone 6/7/8
+iPhone 6/7/8 Plus
+iPhone X
+iPad
+iPad Pro
+Surface Duo
+Galaxy Fold
+
+There are som slight issues on galaxy fold in the navbar and the homepage text don't showing properlly.
+
 ### Browsers
 
-### Bugs
+The website is tested on Chrome, Opera, Microsoft Edge, Safari and firefox. Though some of the syling of the website don't seem to work on firefox.
 
 ### Open Bugs
+- The order total don't get saved in the order, it just shows in the chechut success template.
+- A user can add several favourite of the same product, which they shouldn't be able to do, this also disrupts the remove funtion since it only gets one object. 

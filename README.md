@@ -51,8 +51,6 @@ For this project a simple color palette is chosen with black, white, dark grey a
 
 The font chosen for this project is Permanent Marker for the logo and Lato for the rest of the text on the website, the fallback font for both fonts is Sans-Serif Both fonts are found on Google Fonts.   
 
-## Database Structure 
-
 ## Features 
 
 ### Existing Features
@@ -131,6 +129,8 @@ The font chosen for this project is Permanent Marker for the logo and Lato for t
 
 
 ## Testing
+
+You can find the testing document [here](TESTING.md)
 
 ## Deployment
 
@@ -220,8 +220,13 @@ You can find this in the Config Vars in the settings tab.
 ## Credits 
 
 ### Code 
+The foundation of this site is sourced from [Code Institute Educational material - Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
+
+[This](https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid) document was used to help bould the contact app
+
+Bootstrap wha used to style elements and make the site responsive.
 
 ### Media 
 
-### Acknowledgments
+
 
