@@ -211,6 +211,11 @@ You can find this in the Config Vars in the settings tab.
 14. Add stripe to the Heroku config vars add STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY, you can find them on stripe under developers and the API keys. 
 
 ### Run code locally 
+1. Find the repository you want and click on it.
+2. Above all the files in the repository click on the green Gitpod button.
+3. This opens a new copy of the workspace on Gitpod. You should only do this once and then you can access the workspace directly from Gitpod. If you press the green Gitpod button again it will create a new copy of the workspace on Gitpod.
+4. You can now edit the workspace locally.
+5. If you want to open a preview window of the workspace in the browser you can type in the command: python3 manage.py runserver in the terminal and then click open browser in the pop-up window down to the right.
 
 ## Credits 
 
