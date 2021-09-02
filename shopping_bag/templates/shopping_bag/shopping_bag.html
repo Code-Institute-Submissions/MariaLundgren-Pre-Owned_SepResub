@@ -28,53 +28,55 @@
                         </tr>
                     </thead>
                     {% for item in shopping_bag_items %}
-                        <tr>
-                            <td class="p-3 w-25">
-                                <img class="card-img-top bag-img" src="{{ item.product.image.url }}" alt="product image">
-                            </td>
-                            <td class="py-3">
-                                <p class="my-0 text-capitalize"><strong>{{ item.product.name }}</strong></p>
-                                <p class="my-0"><strong>Size: </strong>{{ item.product.size }}</p>
-                            </td>
-                            <td class="py-3">
-                                <p class="my-0">{{ item.product.price }} :-</p>
-                                <form class="form" action="{% url 'remove_from_shopping_bag' item.item_id %}" method="POST">
-                                    <a class="remove-item text-danger" id="remove_{{ item.item_id }}"><small>Remove</small></a>
-                                </form>
-                            </td>
-                    {% endfor %}
-                        </tr>
-                        <td colspan="5" class="pt-5 text-end">
-                            <hr>
-                            <h6>Delivery: FREE</h6>
-                            <h4 class="mt-4"><strong>Total: {{ total|floatformat:2 }}:-</strong></h4>
-                            <a href="{% url 'checkout' %}" class="btn btn-outline-dark my-2">
-                                <span>Secure Checkout</span>
-                            </a>
+                    <tr>
+                        <td class="p-3 w-25">
+                            <img class="card-img-top bag-img" src="{{ item.product.image.url }}" alt="product image">
                         </td>
-            {% else %}
-            <p>You don't have any items in your bag yet.</p>
-            {% endif %}
+                        <td class="py-3">
+                            <p class="my-0 text-capitalize"><strong>{{ item.product.name }}</strong></p>
+                            <p class="my-0"><strong>Size: </strong>{{ item.product.size }}</p>
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">{{ item.product.price }} :-</p>
+                            <form class="form" action="{% url 'remove_from_shopping_bag' item.item_id %}" method="POST">
+                                <a class="remove-item text-danger"
+                                    id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                            </form>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                    <td colspan="5" class="pt-5 text-end">
+                        <hr>
+                        <h6>Delivery: FREE</h6>
+                        <h4 class="mt-4"><strong>Total: {{ total|floatformat:2 }}:-</strong></h4>
+                        <a href="{% url 'checkout' %}" class="btn btn-outline-dark my-2">
+                            <span>Secure Checkout</span>
+                        </a>
+                    </td>
+                    {% else %}
+                    <p>You don't have any items in your bag yet.</p>
+                    {% endif %}
+            </div>
         </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
 
-{% block postloadjs %}
-{{ block.super }}
-<script type="text/javascript">
+    {% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        // Remove items from bag 
+        $('.remove-item').click(function (e) {
+            let csrfToken = "{{ csrf_token }}";
+            let itemId = $(this).attr('id').split('remove_')[1];
+            let url = `/shopping_bag/remove/${itemId}/`;
+            var data = {
+                'csrfmiddlewaretoken': csrfToken
+            };
 
-    // Remove items from bag 
-    $('.remove-item').click(function(e) {
-        let csrfToken = "{{ csrf_token }}";
-        let itemId = $(this).attr('id').split('remove_')[1];
-        let url = `/shopping_bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
-
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
+            $.post(url, data)
+                .done(function () {
+                    location.reload();
+                });
+        })
     </script>
-{% endblock %}
+    {% endblock %}

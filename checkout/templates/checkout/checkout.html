@@ -7,13 +7,13 @@
     <div class="col padding-top"></div>
 </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h1>Checkout</h1>
-                <hr>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h1>Checkout</h1>
+            <hr>
         </div>
+    </div>
 
     <div class="row">
         <div class="col-12 col-lg-6 my-2 checkout-form">
@@ -34,11 +34,11 @@
         <div class="col-12 col-lg-6 my-2 order-summary">
             <h2>Order Summary</h2>
             {% for item in shopping_bag_items %}
-                <div class="row">
-                        <p class="my-0 text-capitalize"><strong>{{ item.product.name }}</strong></p>
-                        <p class="my-0"><strong>Size: </strong>{{ item.product.size }}</p>
-                        <p class="my-0">{{ item.product.price }}:-</p>
-                </div>
+            <div class="row">
+                <p class="my-0 text-capitalize"><strong>{{ item.product.name }}</strong></p>
+                <p class="my-0"><strong>Size: </strong>{{ item.product.size }}</p>
+                <p class="my-0">{{ item.product.price }}:-</p>
+            </div>
             {% endfor %}
             <hr>
             <p><strong>Delivery: FREE</strong></p>
@@ -49,8 +49,8 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-    {{ client_secret|json_script:"id_client_secret" }}
-    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}

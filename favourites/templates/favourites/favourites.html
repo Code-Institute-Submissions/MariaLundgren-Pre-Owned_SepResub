@@ -17,7 +17,7 @@
                 <hr>
             </div>
         </div>
-    <div class="row">
+        <div class="row">
             {% for favourite in favourites %}
             <div class="col-12 col-md-6 col-lg-3">
                 <div class="card my-2">
@@ -33,34 +33,36 @@
                                 <p>{{ favourite.product.price }}</p>
                             </div>
                             <form class="form" action="{% url 'remove_favourite' favourite.product_id %}" method="POST">
-                                <a class="remove-product text-danger" id="remove_{{ favourite.product_id }}"><small>Remove</small></a>
+                                <a class="remove-product text-danger"
+                                    id="remove_{{ favourite.product_id }}"><small>Remove</small></a>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
             {% empty %}
-                <p>You don't have any favourites!</p>
+            <p>You don't have any favourites!</p>
             {% endfor %}
+        </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
 
-{% block postloadjs %}
-{{ block.super }}
-<script type="text/javascript">
+    {% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        // Remove products from bag 
+        $('.remove-product').click(function (e) {
+            let csrfToken = "{{ csrf_token }}";
+            let productId = $(this).attr('id').split('remove_')[1];
+            let url = `/favourites/remove/${productId}/`;
+            var data = {
+                'csrfmiddlewaretoken': csrfToken
+            };
 
-    // Remove products from bag 
-    $('.remove-product').click(function(e) {
-        let csrfToken = "{{ csrf_token }}";
-        let productId = $(this).attr('id').split('remove_')[1];
-        let url = `/favourites/remove/${productId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken};
-
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
+            $.post(url, data)
+                .done(function () {
+                    location.reload();
+                });
+        })
     </script>
-{% endblock %}
+    {% endblock %}
