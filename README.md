@@ -64,13 +64,11 @@ The font chosen for this project is Permanent Marker for the logo and Lato for t
     - The footer contains links to social media and an about us section. 
 - Home page 
     - Navbar (described under navbar)
-    - This page contains a hero image underneath the navbar.
-    - Underneath the hero image images with that are links to different part of the product categories are available.
+    - Underneath the navbar are the logo, some text about the store and a link to the products page. 
     - Footer (described under footer)
 - Products page
     - Navbar (described under navbar)
-    - Underneath the navbar there are a field to sort the clothes based on price and a field to filter the clothes based on size and color. 
-    - The products page contains images of the clothes with the heart underneath that works as a toggle to add or remove the item to your favorites (if you are a registered user), for all users the title, price and size are displayed underneath the image.
+    - The products page contains images of the clothes and the title, price and size are displayed underneath the image.
     - Footer (described under footer)
 - Selected product page 
     - Navbar (described under navbar)
