@@ -8,7 +8,7 @@ def contact(request):
         if form.is_valid():
             contact = form.save(commit=False)
             contact.user = request.user
-            contact.save
+            contact.save()
     form = ContactForm()
     context = {'form': form}
     return render(request, 'contact/contact.html', context)
