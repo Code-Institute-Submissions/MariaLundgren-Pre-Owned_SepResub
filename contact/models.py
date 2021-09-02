@@ -7,4 +7,3 @@ class Contact(models.Model):
     subject = models.CharField(max_length=100)
     message = models.TextField()
     answer = models.TextField(null=True, blank=True)
-

@@ -6,6 +6,7 @@ from .forms import UserProfileForm
 from django.contrib import messages
 
 from checkout.models import Order
+from contact.models import Contact
 
 @login_required
 def profile(request):
@@ -19,11 +20,13 @@ def profile(request):
 
     form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
+    users_contact = Contact.objects.filter(user=request.user)
 
     template = 'profiles/profile.html'
     context = {
         'form': form,
         'orders': orders,
+        'users_contact': users_contact,
     }
 
     return render(request, template, context)
@@ -38,7 +41,7 @@ def order_history(request, order_number):
 
     template = 'checkout/checkout_success.html'
     context = {
-        'order': order, 
+        'order': order,
         'from_profile': True,
     }
 
