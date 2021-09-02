@@ -15,6 +15,7 @@ def contact(request):
 def view_conversation(request, user):
 
     contact = None
+    user = request.session['user']
     contact = contact.objects.filter(user=request.user)
 
     context = {

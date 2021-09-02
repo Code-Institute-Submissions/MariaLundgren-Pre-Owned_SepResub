@@ -134,7 +134,7 @@ The font chosen for this project is Permanent Marker for the logo and Lato for t
 
 ## Deployment
 
-### Deploy
+### Deploy to Heroku
 
 1. Create an account on Heroku if you don't have one.
 2. Log in to your Heroku account and to the right on the screen and choose **Create New App**.
@@ -144,6 +144,32 @@ The font chosen for this project is Permanent Marker for the logo and Lato for t
 6. Go to the recourese tab and in the search field search for postgres and choose **Heroku Postgres**. 
 7. For plan choose 'Hobby Dev - Free' and click on **Submit Order Form**. 
 8. Go back to your teminal and install Dj Database by typing `pip3 install dj_database_url` in you terminal. 
+9. Install psycopg2-binary by typing `pip3 install psycopg2-binary` in your terminal. 
+10. Freeze your requirements by typing `pip3 freeze > requirements.txt` in your terminal.
+11. Import dj_database_url in settings.py.
+12.  In database setting comment put the default configuration.
+11. Replace the default database with dj_database_url.parse() and add in the database URL from Heroku.
+You can find this in the Config Vars in the settings tab.
+12. Migrate by typing `python3 manage.py migrate` in the terminal and if you have fixtures you can add them back in now. 
+13. You need to create a new superuser by typing `python3 manage.py createsuperuser` in the terminal.
+14. Uncomment the default database in settings.py and remove the Heroku database config.
+15. Set an if statement to use Postegres when the app is running on Heroku, where the database URL is defined or the default database otherwise. 
+16. Install gunicorn by typing `pip3 install gunicorn` in the terminal and freeze the requirements again. 
+17. Create a Procfile and write `web: gunicorn your_app_name.wsgi:application` in it. 
+18. Log in to heroku by typing `heroku login` in the terminal and log in. 
+19. type `heroku config:set DISABLE_COLLECTSTATIC=1 --app your_app_name` to temporary disable collectstatic.
+20. Add the hostname of your heroku app and `localhost` in `ALLOWED_HOSTS = []` in settings.py.
+21. now add your changes by typing `git add .`, commit by typing `git commit -m"your_commit_message"` and push ti guthub by typing `git push in the terminal`.
+22. The type `git push heroku master` in the terminal to push to Heroku.
+23. Go to your app in heroku and under the deploy tab Click on connect to github, serach for your repository, click on connect and then enable automatic deploys.
+
+### Connect to Amazon S3
+1. Go to aws.amazon.com  and log in or create an account if you don't have one.
+2. Serch for S3 in the servces or look for it in the menue.
+3. Open S3 and create a bucket, chose a name, choose the region nearest to you and un check Block all public access.
+
+
+
 
 ### Run code locally 
 
