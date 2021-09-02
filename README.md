@@ -18,13 +18,11 @@ User’s goal: To find modern clothes that have a lower impact on the environmen
 
 As an anonymous user: 
 -	I want to brows the products the company are offering.
--	I want to be able to search for a product.
--	I want to filter the products in different categories.
--	I want to be able to sort the amongst the products.
 -	I want to be able to sign up to become a registered user. 
 
 As a registered user 
 -	I want to be able to log in to my account. 
+-	I want to be able to log out from my account. 
 -	I want to be able to save products that I like to my profile so I can easily find them later. 
 -	I want to be able to add and delete products to my shopping bag.
 -	I want to be able to see my orders.
