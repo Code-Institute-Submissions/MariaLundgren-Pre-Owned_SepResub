@@ -163,11 +163,19 @@ You can find this in the Config Vars in the settings tab.
 22. The type `git push heroku master` in the terminal to push to Heroku.
 23. Go to your app in heroku and under the deploy tab Click on connect to github, serach for your repository, click on connect and then enable automatic deploys.
 
-### Connect to Amazon S3
-1. Go to aws.amazon.com  and log in or create an account if you don't have one.
-2. Serch for S3 in the servces or look for it in the menue.
-3. Open S3 and create a bucket, chose a name, choose the region nearest to you and un check Block all public access.
-
+### Connect to Amazon Webservices
+1. Follow the instructions [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html) to create your Bucket in Amazon Webservices.
+2. Then create a group and a user in AWS through IAM. You can find instructions on how to create user groups [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_create.html) and how to add users [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html). 
+3. Install boto3 by typing `pip3 inatall boto3` in the terminal
+4. Install django storage by typing `pip3 install django-storages` in the terminal
+5. Freeze your requirements by typing `pip3 freeze > requirements.txt` in your terminal.
+6. Add storages to your installed apps in settings.py
+7. Add these settings in youre settings.py 
+    `AWS_STORAGE_BUCKET_NAME = 'pre-owned'
+    AWS_S3_REGION_NAME = 'eu-north-1'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'`
 
 
 
