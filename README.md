@@ -228,5 +228,8 @@ Bootstrap wha used to style elements and make the site responsive.
 
 ### Media 
 
-
-
+[sweater image from](https://www.pexels.com/photo/woman-in-yellow-sweater-smiling-3732881/)
+[pants image from](https://www.pexels.com/photo/slender-teen-with-bright-yellow-skateboard-5325881/)
+[skirt image from](https://www.pexels.com/photo/woman-holding-green-and-red-leather-handbag-932401/)
+[outerware image from](https://www.pexels.com/photo/standing-woman-holding-cup-of-drink-3418753/)
+[dressimage from](https://www.pexels.com/photo/woman-in-red-spaghetti-strap-dress-standing-near-brown-wooden-post-5822660/)
