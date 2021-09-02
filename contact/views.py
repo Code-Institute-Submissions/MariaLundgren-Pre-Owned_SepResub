@@ -5,6 +5,9 @@ from .forms import ContactForm
 def contact(request):
     if request.method == 'POST':
         form =ContactForm(request.POST)
+        contact = form.save(commit=False)
+        contact.user = request.user
+        contact.save
         if form.is_valid():
             form.save()
     form = ContactForm()
