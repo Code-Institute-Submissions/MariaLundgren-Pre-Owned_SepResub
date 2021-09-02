@@ -1,8 +1,6 @@
 import uuid
 
 from django.db import models
-from django.db.models import Sum
-from django.conf import settings
 from django.shortcuts import get_object_or_404
 
 from products.models import Product
@@ -36,7 +34,6 @@ class Order(models.Model):
             total += product.price
         self.save()
 
-
     def save(self, *args, **kwargs):
         if not self.order_number:
             self.order_number = self._generate_order_number()
@@ -47,8 +44,11 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='orderitems')
-    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
+    order = models.ForeignKey(Order, null=False, blank=False,
+                              on_delete=models.CASCADE,
+                              related_name='orderitems')
+    product = models.ForeignKey(Product, null=False, blank=False,
+                                on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.order.order_number}'

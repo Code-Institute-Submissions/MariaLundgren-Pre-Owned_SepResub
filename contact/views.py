@@ -7,7 +7,7 @@ from django.contrib import messages
 @login_required
 def contact(request):
     if request.method == 'POST':
-        form =ContactForm(request.POST)
+        form = ContactForm(request.POST)
         if form.is_valid():
             messages.success(request, f'Thank you for your message!')
             contact = form.save(commit=False)
