@@ -3,8 +3,8 @@
 ### Validation 
 
 To test the CSS the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used.
-
 The CSS validator showed no errors or warnings.
+
 ![CSS Validation](media/css-validator.jpg)
 
 ### Features
