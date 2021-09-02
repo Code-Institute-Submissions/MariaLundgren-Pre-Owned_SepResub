@@ -34,9 +34,9 @@
         <div class="container-fluid">
           <a class="navbar-brand logo" href="{% url 'home' %}">Pre-Owned</a>
           <div class="dropdown navbar-brand">
-            <a id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+            <div id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fas fa-user text-white nav-icon"></i>
-            </a>
+            </div>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
               {% if request.user.is_authenticated %}
                 <li><a href="{% url 'profile' %}" class="text-decoration-none text-dark ms-4">My Profile</a></li>
@@ -125,7 +125,7 @@
     </footer>
 
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
     window.onload = (event) => {
       $('.toast').toast('show');
     }
