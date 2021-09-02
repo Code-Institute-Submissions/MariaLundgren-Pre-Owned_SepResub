@@ -159,7 +159,7 @@ You can find this in the Config Vars in the settings tab.
 18. Log in to heroku by typing `heroku login` in the terminal and log in. 
 19. type `heroku config:set DISABLE_COLLECTSTATIC=1 --app your_app_name` to temporary disable collectstatic.
 20. Add the hostname of your heroku app and `localhost` in `ALLOWED_HOSTS = []` in settings.py.
-21. now add your changes by typing `git add .`, commit by typing `git commit -m"your_commit_message"` and push ti guthub by typing `git push in the terminal`.
+21. Add your changes by typing `git add .`, commit by typing `git commit -m"your_commit_message"` and push to guthub by typing `git push in the terminal`.
 22. The type `git push heroku master` in the terminal to push to Heroku.
 23. Go to your app in heroku and under the deploy tab Click on connect to github, serach for your repository, click on connect and then enable automatic deploys.
 
@@ -171,13 +171,44 @@ You can find this in the Config Vars in the settings tab.
 5. Freeze your requirements by typing `pip3 freeze > requirements.txt` in your terminal.
 6. Add storages to your installed apps in settings.py
 7. Add these settings in youre settings.py 
-    `AWS_STORAGE_BUCKET_NAME = 'pre-owned'
+```
+    if 'USE_AWS' in os.environ:
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+    AWS_STORAGE_BUCKET_NAME = 'pre-owned'
     AWS_S3_REGION_NAME = 'eu-north-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'`
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+```
+8. On Heroku add AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, USE_AWS to True in the Config Vars and remove DISABLE_COLLECT_STATIC. 
+9. Create a file Called custom_storages.py and add in
+```
+    from django.conf import settings
+    from storages.backends.s3boto3 import S3Boto3Storage
 
+    class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
 
+    class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+```
+10. Add this in settings.py
+```
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
+11. Add your changes by typing `git add .`, commit by typing `git commit -m"your_commit_message"` and push to Heroku by typing `git push in the terminal`.
+12. Now you can add your mediafiles to 3S. 
+13. Confirm the email adress for your superuser in the admin or by the email confirmation link. 
+14. Add stripe to the Heroku config vars add STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY, you can find them on stripe under developers and the API keys. 
 
 ### Run code locally 
 
