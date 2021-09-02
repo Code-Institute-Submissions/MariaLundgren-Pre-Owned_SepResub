@@ -101,12 +101,6 @@ def checkout_success(request, order_number):
     order.user_profile = profile
     order.save()
 
-    shopping_bag = request.session.get('shopping_bag', {})
-    total = 0
-    for item_id, item_data in shopping_bag.items():
-        product = get_object_or_404(Product, pk=item_id)
-        total += product.price
-
     if 'shopping_bag' in request.session:
         del request.session['shopping_bag']
 
