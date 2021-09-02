@@ -9,7 +9,7 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            messages.success(request, f'Thank you for your message!')
+            messages.success(request, 'Thank you for your message!')
             contact = form.save(commit=False)
             contact.user = request.user
             contact.save()

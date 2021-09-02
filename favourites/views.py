@@ -34,7 +34,7 @@ def add_favourite(request, product_id):
         user = request.user
         record = Favourites(product_id=product_id, user=user)
         record.save()
-        messages.success(request, f'Added product to your favorites')
+        messages.success(request, 'Added product to your favorites')
         return redirect(redirect_url)
     else:
         return redirect(reverse("products"))
@@ -46,7 +46,7 @@ def remove_favourite(request, product_id):
         favourites = get_object_or_404(Favourites, product=product,
                                        user=request.user)
         favourites.delete()
-        messages.success(request, f'Removed product to your favorites')
+        messages.success(request, 'Removed product to your favorites')
         return HttpResponse(status=200)
     else:
         return redirect(reverse("favourites"))
