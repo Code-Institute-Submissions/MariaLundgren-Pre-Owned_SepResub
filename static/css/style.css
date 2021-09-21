@@ -135,6 +135,12 @@ h2 {
   margin-right: auto;
 }
 
+/* Products */
+
+.product-card {
+  height: 500px;
+}
+
 /* Selected product */
 
 .selcted-card {
