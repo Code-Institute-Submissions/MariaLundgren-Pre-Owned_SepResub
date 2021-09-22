@@ -29,6 +29,17 @@ h2 {
   color: #1f1f1f;
 }
 
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+footer {
+  margin-top: auto;
+}
+
 /* Navbar */
 
 .nav-icon:hover {
