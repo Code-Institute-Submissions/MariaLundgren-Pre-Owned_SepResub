@@ -3,11 +3,17 @@
 
 {% block content %}
 
-<div class="row">
-    <div class="col padding-top"></div>
-</div>
+    <div class="row">
+        <div class="col padding-top"></div>
+    </div>
 
-<div class="container">
-    <img src="{{ MEDIA_URL }}hero_image.jpg" alt="image of women in suits" class="hero-image mx-auto">
-</div>
+    <div class="container">
+        <div class="row">
+            <img src="{{ MEDIA_URL }}hero_image.jpg" alt="image of women in suits" class="hero-image mx-auto">
+            <p class="text-center fs-3">Get ready for fall in a sustainable way!</p>
+            <a href="{% url 'products' %}" class="btn btn-dark shop-now mx-auto">
+                <span>Shop Now</span>
+            </a>
+        </div>
+    </div>
 {% endblock %}
