@@ -149,7 +149,7 @@ footer {
 /* Products */
 
 .product-card {
-  height: 650px;
+  min-height: 650px;
 }
 
 /* Selected product */
