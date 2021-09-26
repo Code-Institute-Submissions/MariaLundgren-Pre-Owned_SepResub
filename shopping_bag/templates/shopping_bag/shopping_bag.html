@@ -14,7 +14,9 @@
             <hr>
         </div>
     </div>
+</div>
 
+<div class="container">
     <div class="row">
         <div class="col">
             {%if shopping_bag_items %}
@@ -56,9 +58,12 @@
                     {% else %}
                     <p>You don't have any items in your bag yet.</p>
                     {% endif %}
+                </table>
             </div>
         </div>
     </div>
+</div>
+
     {% endblock %}
 
     {% block postloadjs %}
