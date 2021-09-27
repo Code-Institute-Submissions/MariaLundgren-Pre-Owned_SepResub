@@ -91,6 +91,7 @@ footer {
 
 .hero-text{
   margin-top: 150px;
+  z-index: 2;
 }
 
 .shop-now {
