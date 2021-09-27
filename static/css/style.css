@@ -78,10 +78,19 @@ footer {
   font-size: 700%;
 }
 
+.hero-container {
+  position:relative;
+}
+
 .hero-image {
   width: 100%;
   height: auto;
   margin-bottom: 3rem;
+  position: absolute;
+}
+
+.hero-text{
+  margin-top: 150px;
 }
 
 .shop-now {
