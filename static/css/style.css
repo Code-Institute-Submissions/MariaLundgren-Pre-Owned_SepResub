@@ -199,3 +199,11 @@ footer {
   max-height: 360px;
   overflow: auto;
 }
+
+/* Media queries */
+
+@media (max-width: 768px) {
+  .hero-text {
+    margin-top: 200px;
+  }
+}
