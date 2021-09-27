@@ -80,7 +80,7 @@ footer {
 
 .hero-container {
   position:relative;
-  margin-bottom: 20rem;
+  margin-bottom: 40rem;
 }
 
 .hero-image {
@@ -91,7 +91,7 @@ footer {
 }
 
 .hero-text{
-  margin-top: 250px;
+  margin-top: 300px;
   z-index: 2;
 }
 
