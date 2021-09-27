@@ -91,6 +91,7 @@ footer {
 }
 
 .hero-text{
+  font-weight: 700;
   margin-top: 300px;
   z-index: 2;
 }
