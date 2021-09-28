@@ -21,6 +21,15 @@
             <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                 {% csrf_token %}
                 {{ form|crispy }}
+                {% for error in form.phone.errors %}
+                <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+                {% for error in form.num_let.errors %}
+                <small class="text-danger">{{ error }}</small>
+                {% endfor %}
+                {% for error in form.postcode.errors %}
+                <small class="text-danger">{{ error }}</small>
+                {% endfor %}
                 <button class="btn btn-outline-dark">Update Information</button>
             </form>
         </div>
