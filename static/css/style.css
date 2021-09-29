@@ -95,6 +95,10 @@ footer {
   margin-top: 450px;
   z-index: 2;
   color: #fff;
+  text-shadow: 0 0 5px #000,0 0 5px #000,
+               0 0 5px #000,0 0 5px #000,
+               0 0 5px #000,0 0 5px #000,
+               0 0 5px #000,0 0 5px #000;
 }
 
 .shop-now {
