@@ -101,6 +101,7 @@ footer {
   width: 150px;
   font-weight: 500;
   z-index: 2;
+  background-color: #1f1f1f;
 }
 
 .shop-now:hover {
