@@ -7,59 +7,85 @@
     <div class="col padding-top"></div>
 </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>My Favourites</h1>
-                <hr>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>My Favourites</h1>
+            <hr>
         </div>
-        <div class="row">
-            {% for favourite in favourites %}
-            <div class="col-12 col-md-6 col-lg-3">
-                <div class="card my-2 product-card">
-                    <div class="card-body">
-                        <a href="{% url 'selected_product' favourite.product.id %}">
-                            <img class="card-img-top" src="{{ favourite.product.image.url }}" alt="product image">
-                        </a>
-                    </div>
-                    <div class="card-footer text-left">
-                        <div class="row">
-                            <div class="col">
-                                <p class="text-capitalize">{{ favourite.product.name }}</p>
-                                <p>{{ favourite.product.price }}</p>
-                            </div>
-                            <form class="form" action="{% url 'remove_favourite' favourite.product_id %}" method="POST">
-                                <a class="remove-product text-danger"
-                                    id="remove_{{ favourite.product_id }}"><small>Remove</small></a>
-                            </form>
+    </div>
+    <div class="row">
+        {% for favourite in favourites %}
+        <div class="col-12 col-md-6 col-lg-3">
+            <div class="card my-2 product-card">
+                <div class="card-body">
+                    <a href="{% url 'selected_product' favourite.product.id %}">
+                        <img class="card-img-top" src="{{ favourite.product.image.url }}" alt="product image">
+                    </a>
+                </div>
+                <div class="card-footer text-left">
+                    <div class="row">
+                        <div class="col">
+                            <p class="text-capitalize">{{ favourite.product.name }}</p>
+                            <p>{{ favourite.product.price }}</p>
                         </div>
+                            <a class="text-danger" data-bs-toggle="modal" data-bs-target="#myModal{{ favourite.product.id }}"><small>Remove</small></a>
+                        <!-- Modal -->
+                        {% for products in favourites %}
+                        <div class="modal fade" id="myModal{{ favourite.product.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure you want to remove {{ favourite.product.name }} from your favorites?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                            <a action="{% url 'remove_favourite' favourite.product_id %}" method="POST" class="remove-product btn btn-danger" id="remove_{{ favourite.product_id }}">Remove</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
-            {% empty %}
-            <p>You don't have any favourites!</p>
-            {% endfor %}
         </div>
+        {% empty %}
+        <p>You don't have any favourites!</p>
+        {% endfor %}
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
 
-    {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-        // Remove products from bag 
-        $('.remove-product').click(function (e) {
-            let csrfToken = "{{ csrf_token }}";
-            let productId = $(this).attr('id').split('remove_')[1];
-            let url = `/favourites/remove/${productId}/`;
-            var data = {
-                'csrfmiddlewaretoken': csrfToken
-            };
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    // Remove products from bag 
+    $('.remove-product').click(function (e) {
+        let csrfToken = "{{ csrf_token }}";
+        let productId = $(this).attr('id').split('remove_')[1];
+        let url = `/favourites/remove/${productId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken
+        };
 
-            $.post(url, data)
-                .done(function () {
-                    location.reload();
-                });
-        })
-    </script>
-    {% endblock %}
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+
+    var myModal = document.getElementById('myModal')
+    var myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', function () {
+        myInput.focus()
+    })
+</script>
+{% endblock %}
