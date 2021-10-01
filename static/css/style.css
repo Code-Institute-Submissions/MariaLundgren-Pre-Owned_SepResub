@@ -56,10 +56,11 @@ footer {
   background-color: #1f1f1f;
 }
 
-/* Allath forms */ 
-
-.allauth-form-inner-content label:not([for='id_remember']) {
-  display: none;
+.free-delivery {
+  background-color: #000;
+  color: #9CD3BF;
+  font-weight: 600;
+  font-size: 125%;
 }
 
 /* Toasts */
@@ -70,8 +71,12 @@ footer {
   z-index: 999999;
 }
 
-/* Home */
+/* Allath forms */ 
+.allauth-form-inner-content label:not([for='id_remember']) {
+  display: none;
+}
 
+/* Home */
 .home-logo {
   font-family: "Permanent Marker", sans-serif;
   color: #9CD3BF;
