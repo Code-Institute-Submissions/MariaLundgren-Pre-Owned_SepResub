@@ -21,6 +21,8 @@ def update_username_from_email(sender, instance, **kwargs):
 class UserProfile(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    default_name = models.CharField(max_length=50,
+                                    null=True)
     default_phone_number = models.CharField(max_length=25,
                                             null=True)
     default_street_address = models.CharField(max_length=50,
