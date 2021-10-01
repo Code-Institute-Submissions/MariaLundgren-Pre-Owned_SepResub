@@ -12,7 +12,7 @@ class UserProfileForm(forms.ModelForm):
     default_phone_number = forms.CharField(validators=[phone_regex], required=True, min_length=5)
     default_street_address = forms.CharField(validators=[num_let_regex], required=True, min_length=5)
     default_postcode = forms.CharField(validators=[postcode_regex], required=True, min_length=4)
-    default_town_or_city = forms.CharField(validators=[num_let_regex], required=True,)
+    default_town_or_city = forms.CharField(validators=[num_let_regex], required=True, min_length=4)
 
     class Meta:
         model = UserProfile
