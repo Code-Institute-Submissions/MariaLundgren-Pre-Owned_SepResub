@@ -196,6 +196,13 @@ footer {
   overflow: auto;
 }
 
+/* Toasts */
+
+.toast {
+  width: 250px;
+  background-color: #fff;
+}
+
 /* Media queries */
 
 @media (max-width: 768px) {
