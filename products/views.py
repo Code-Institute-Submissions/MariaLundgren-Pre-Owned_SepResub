@@ -4,7 +4,7 @@ from .models import Product, Category
 
 def products(request):
 
-    products = Product.objects.all()
+    products = Product.objects.order_by('-id')
     categories = None
     sort = None
     direction = None
