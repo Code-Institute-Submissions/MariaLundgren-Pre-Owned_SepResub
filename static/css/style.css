@@ -216,3 +216,10 @@ footer {
     margin-top: 200px;
   }
 }
+
+@media (min-width: 768px) {
+  .nav-icon {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
