@@ -91,7 +91,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     // Remove items from bag 
     $('.remove-item').click(function (e) {
         let csrfToken = "{{ csrf_token }}";
