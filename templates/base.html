@@ -48,11 +48,11 @@
           </div>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
             {% if request.user.is_authenticated %}
-            <li><a href="{% url 'profile' %}" class="text-decoration-none text-dark">My Profile</a></li>
-            <li><a href="{% url 'account_logout' %}" class="text-decoration-none text-dark">Log Out</a></li>
+            <li><a href="{% url 'profile' %}" class="text-decoration-none text-dark ms-3">My Profile</a></li>
+            <li><a href="{% url 'account_logout' %}" class="text-decoration-none text-dark ms-3">Log Out</a></li>
             {% else %}
-            <li><a href="{% url 'account_signup' %}" class="text-decoration-none text-dark">Register</a></li>
-            <li><a href="{% url 'account_login' %}" class="text-decoration-none text-dark">Login</a></li>
+            <li><a href="{% url 'account_signup' %}" class="text-decoration-none text-dark ms-3">Register</a></li>
+            <li><a href="{% url 'account_login' %}" class="text-decoration-none text-dark ms-3">Login</a></li>
             {% endif %}
           </ul>
         </div>
