@@ -213,6 +213,15 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .shop-now {
+    left: 50%;
+    top: 50%;
+    margin-top: 2rem;
+    transform: translate(-50%, -50%);
+  }
+}
+
 @media (min-width: 768px) {
   .hero-text {
       font-weight: 700;
