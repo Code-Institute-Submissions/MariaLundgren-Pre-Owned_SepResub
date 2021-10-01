@@ -39,7 +39,7 @@
                             <p class="my-0"><strong>Size: </strong>{{ item.product.size }}</p>
                         </td>
                         <td class="py-3">
-                            <p class="my-0">{{ item.product.price }} :-</p>
+                            <p class="my-0">{{ item.product.price }} <small>SEK</small></p>
                             <a class="text-danger" data-bs-toggle="modal"
                                 data-bs-target="#myModal{{ item.item_id }}"><small>Remove</small></a>
                             <!-- Modal -->
@@ -73,7 +73,7 @@
                     <td colspan="5" class="pt-5 text-end">
                         <hr>
                         <h6>Delivery: FREE</h6>
-                        <h4 class="mt-4"><strong>Total: {{ total|floatformat:2 }}:-</strong></h4>
+                        <h4 class="mt-4"><strong>Total: {{ total|floatformat:2 }} <small>SEK</small></strong></h4>
                         <a href="{% url 'checkout' %}" class="btn btn-outline-dark my-2">
                             <span>Secure Checkout</span>
                         </a>

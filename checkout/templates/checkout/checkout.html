@@ -37,12 +37,12 @@
             <div class="row">
                 <p class="my-0 text-capitalize"><strong>{{ item.product.name }}</strong></p>
                 <p class="my-0"><strong>Size: </strong>{{ item.product.size }}</p>
-                <p class="my-0">{{ item.product.price }}:-</p>
+                <p class="my-0">{{ item.product.price }} <small>SEK</small></p>
             </div>
             {% endfor %}
             <hr>
             <p><strong>Delivery: FREE</strong></p>
-            <h3 class="mt-4">Total: {{ total|floatformat:2 }}:-</h3>
+            <h3 class="mt-4">Total: {{ total|floatformat:2 }} <small>SEK</small></h3>
         </div>
     </div>
 </div>
