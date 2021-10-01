@@ -18,15 +18,15 @@
             {% for favourite in favourites %}
             <div class="col-12 col-md-6 col-lg-3">
                 <div class="card my-2 product-card">
-                    <a href="{% url 'selected_product' favourite.product.id %}">
-                        <img class="card-img-top" src="{{ favourite.product.image.url }}" alt="product image">
-                    </a>
                     <div class="card-body">
-                        <p class="text-capitalize">{{ favourite.product.name }}</p>
+                        <a href="{% url 'selected_product' favourite.product.id %}">
+                            <img class="card-img-top" src="{{ favourite.product.image.url }}" alt="product image">
+                        </a>
                     </div>
                     <div class="card-footer text-left">
                         <div class="row">
                             <div class="col">
+                                <p class="text-capitalize">{{ favourite.product.name }}</p>
                                 <p>{{ favourite.product.price }}</p>
                             </div>
                             <form class="form" action="{% url 'remove_favourite' favourite.product_id %}" method="POST">
