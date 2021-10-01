@@ -40,10 +40,33 @@
                         </td>
                         <td class="py-3">
                             <p class="my-0">{{ item.product.price }} :-</p>
-                            <form class="form" action="{% url 'remove_from_shopping_bag' item.item_id %}" method="POST">
-                                <a class="remove-item text-danger"
-                                    id="remove_{{ item.item_id }}"><small>Remove</small></a>
-                            </form>
+                            <a class="text-danger" data-bs-toggle="modal"
+                                data-bs-target="#myModal{{ item.item_id }}"><small>Remove</small></a>
+                            <!-- Modal -->
+                            {% for item in shopping_bag_items %}
+                            <div class="modal fade" id="myModal{{ item.item_id }}" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want to remove {{ item.product.name }} from your shopping
+                                            bag?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <a action="{% url 'remove_from_shopping_bag' item.item_id %}" method="POST"
+                                                class="remove-item btn btn-danger"
+                                                id="remove_{{ item.item_id }}">Remove</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
                         </td>
                         {% endfor %}
                     </tr>
@@ -64,24 +87,31 @@
     </div>
 </div>
 
-    {% endblock %}
+{% endblock %}
 
-    {% block postloadjs %}
-    {{ block.super }}
-    <script type="text/javascript">
-        // Remove items from bag 
-        $('.remove-item').click(function (e) {
-            let csrfToken = "{{ csrf_token }}";
-            let itemId = $(this).attr('id').split('remove_')[1];
-            let url = `/shopping_bag/remove/${itemId}/`;
-            var data = {
-                'csrfmiddlewaretoken': csrfToken
-            };
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    // Remove items from bag 
+    $('.remove-item').click(function (e) {
+        let csrfToken = "{{ csrf_token }}";
+        let itemId = $(this).attr('id').split('remove_')[1];
+        let url = `/shopping_bag/remove/${itemId}/`;
+        var data = {
+            'csrfmiddlewaretoken': csrfToken
+        };
 
-            $.post(url, data)
-                .done(function () {
-                    location.reload();
-                });
-        })
-    </script>
-    {% endblock %}
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    })
+
+    var myModal = document.getElementById('myModal')
+    var myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', function () {
+        myInput.focus()
+    })
+</script>
+{% endblock %}
