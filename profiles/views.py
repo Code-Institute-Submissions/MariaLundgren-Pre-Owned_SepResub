@@ -24,7 +24,7 @@ def profile(request):
 
     form = UserProfileForm(instance=profile)
     orders = profile.orders.all().order_by('-date')
-    users_contact = Contact.objects.filter(user=request.user)
+    users_contact = Contact.objects.filter(user=request.user).order_by('-id')
 
     template = 'profiles/profile.html'
     context = {
