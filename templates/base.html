@@ -38,100 +38,98 @@
 
 <body class="d-flex flex-column">
   <div class="wrapper">
-  <header class="container-fluid fixed-top nav-container">
-    <nav class="navbar navbar-expand-lg navbar-dark vw-100">
-      <div class="container-fluid">
-        <a class="navbar-brand logo d-none d-md-block px-5" href="{% url 'home' %}">Pre-Owned</a>
-        <div class="dropdown navbar-brand">
-          <div id="dropdownMenu2" role="tablist" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fas fa-user text-white nav-icon"></i>
+    <header class="container-fluid fixed-top nav-container">
+      <nav class="navbar navbar-expand-lg navbar-dark vw-100">
+        <div class="container-fluid">
+          <a class="navbar-brand logo d-none d-md-block px-5" href="{% url 'home' %}">Pre-Owned</a>
+          <div class="dropdown navbar-brand">
+            <div id="dropdownMenu2" role="tablist" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user text-white nav-icon"></i>
+            </div>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              {% if request.user.is_authenticated %}
+              <li><a href="{% url 'profile' %}" class="text-decoration-none text-dark ms-3">My Profile</a></li>
+              <li><a href="{% url 'account_logout' %}" class="text-decoration-none text-dark ms-3">Log Out</a></li>
+              {% else %}
+              <li><a href="{% url 'account_signup' %}" class="text-decoration-none text-dark ms-3">Register</a></li>
+              <li><a href="{% url 'account_login' %}" class="text-decoration-none text-dark ms-3">Login</a></li>
+              {% endif %}
+            </ul>
           </div>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            {% if request.user.is_authenticated %}
-            <li><a href="{% url 'profile' %}" class="text-decoration-none text-dark ms-3">My Profile</a></li>
-            <li><a href="{% url 'account_logout' %}" class="text-decoration-none text-dark ms-3">Log Out</a></li>
-            {% else %}
-            <li><a href="{% url 'account_signup' %}" class="text-decoration-none text-dark ms-3">Register</a></li>
-            <li><a href="{% url 'account_login' %}" class="text-decoration-none text-dark ms-3">Login</a></li>
-            {% endif %}
-          </ul>
+          <a class="nav-link px-2 navbar-brand" href="{% url 'favourites' %}"><i
+              class="fas fa-heart text-white nav-icon"></i></a>
+          <a class="nav-link px-2 navbar-brand" href="{% url 'shopping_bag' %}"><i
+              class="fas fa-shopping-bag text-white nav-icon"></i></a>
+          <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-5">
+              <li class="nav-item">
+                <a class="nav-link text-white mx-5" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white mx-5" href="{% url 'products' %}">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white mx-5" href="{% url 'contact' %}?category=outerwear">Contact</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <a class="nav-link px-2 navbar-brand" href="{% url 'favourites' %}"><i
-            class="fas fa-heart text-white nav-icon"></i></a>
-        <a class="nav-link px-2 navbar-brand" href="{% url 'shopping_bag' %}"><i
-            class="fas fa-shopping-bag text-white nav-icon"></i></a>
-        <button class="navbar-toggler me-3" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-5">
-            <li class="nav-item">
-              <a class="nav-link text-white mx-5" href="{% url 'home' %}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white mx-5" href="{% url 'products' %}">Shop</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white mx-5" href="{% url 'contact' %}?category=outerwear">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    <div calss="container fluid">
-      <div class="row">
+      </nav>
+      <div class="row wv-100%">
         <div class="free-delivery">
           <p class="text-center my-2">ALWAYS FREE DELIVERY</p>
         </div>
       </div>
+    </header>
+
+    {% if messages %}
+    <div class="message-container">
+      {% for message in messages %}
+      {% with message.level as level %}
+      {% if level == 40 %}
+      {% include 'includes/toasts/toast_error.html' %}
+      {% elif level == 30 %}
+      {% include 'includes/toasts/toast_warning.html' %}
+      {% elif level == 25 %}
+      {% include 'includes/toasts/toast_success.html' %}
+      {% else %}
+      {% include 'includes/toasts/toast_info.html' %}
+      {% endif %}
+      {% endwith %}
+      {% endfor %}
     </div>
-  </header>
-
-  {% if messages %}
-  <div class="message-container">
-    {% for message in messages %}
-    {% with message.level as level %}
-    {% if level == 40 %}
-    {% include 'includes/toasts/toast_error.html' %}
-    {% elif level == 30 %}
-    {% include 'includes/toasts/toast_warning.html' %}
-    {% elif level == 25 %}
-    {% include 'includes/toasts/toast_success.html' %}
-    {% else %}
-    {% include 'includes/toasts/toast_info.html' %}
     {% endif %}
-    {% endwith %}
-    {% endfor %}
-  </div>
-  {% endif %}
 
-  {% block pageheader %}
-  {% endblock %}
+    {% block pageheader %}
+    {% endblock %}
 
-  {% block content %}
-  {% endblock %}
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-12 d-flex justify-content-center justify-content-md-end">
-          <a href="https://instagram.com/" target="_blank">
-            <i class="fab fa-instagram social" aria-hidden="true"></i>
-            <span class="sr-only">Instagram</span>
-          </a>
-          <a href="https://facebook.com/" target="_blank">
-            <i class="fab fa-facebook-square social" aria-hidden="true"></i>
-            <span class="sr-only">Facebook</span>
-          </a>
-          <a href="https://linkedin.com/" target="_blank">
-            <i class="fab fa-linkedin social" aria-hidden="true"></i>
-            <span class="sr-only">Linkedin</span>
-          </a>
+    {% block content %}
+    {% endblock %}
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-center justify-content-md-end">
+            <a href="https://instagram.com/" target="_blank">
+              <i class="fab fa-instagram social" aria-hidden="true"></i>
+              <span class="sr-only">Instagram</span>
+            </a>
+            <a href="https://facebook.com/" target="_blank">
+              <i class="fab fa-facebook-square social" aria-hidden="true"></i>
+              <span class="sr-only">Facebook</span>
+            </a>
+            <a href="https://linkedin.com/" target="_blank">
+              <i class="fab fa-linkedin social" aria-hidden="true"></i>
+              <span class="sr-only">Linkedin</span>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
   </div>
 
   {% block postloadjs %}
