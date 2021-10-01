@@ -9,7 +9,7 @@ class UserProfileForm(forms.ModelForm):
     postcode_regex = RegexValidator(regex=r'[0-9]$', message="You can only enter numbers in this field.")
     num_let_regex = RegexValidator(regex=r'[A-Za-z0-9]$', message="You can only enter letters and numbers in this field.")
 
-    default_phone_number = forms.CharField(validators=[phone_regex], required=True)
+    default_phone_number = forms.CharField(validators=[phone_regex], required=True, min_length=5)
     default_street_address = forms.CharField(validators=[num_let_regex], required=True, min_length=5)
     default_postcode = forms.CharField(validators=[postcode_regex], required=True, min_length=4)
     default_town_or_city = forms.CharField(validators=[num_let_regex], required=True,)
