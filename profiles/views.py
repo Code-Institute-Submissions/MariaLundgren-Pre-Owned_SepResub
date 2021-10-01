@@ -23,7 +23,7 @@ def profile(request):
             return render(request, 'profiles/profile.html', {'form': form})
 
     form = UserProfileForm(instance=profile)
-    orders = profile.orders.all()
+    orders = profile.orders.all().order_by('-date')
     users_contact = Contact.objects.filter(user=request.user)
 
     template = 'profiles/profile.html'
