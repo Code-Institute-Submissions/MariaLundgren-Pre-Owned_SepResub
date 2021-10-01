@@ -241,6 +241,13 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .hero-container {
+    margin-bottom: 5rem;
+  }
+}
+
+
 @media (min-width: 768px) {
   .nav-icon {
     margin-left: 10px;
