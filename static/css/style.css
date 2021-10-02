@@ -1,10 +1,10 @@
 * {
-    padding: 0;
-    margin: 0; 
+  padding: 0;
+  margin: 0;
 }
 
 .padding-top {
-    height: 125px;
+  height: 125px;
 }
 
 html,
@@ -12,7 +12,10 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
   font-family: "Lato", sans-serif;
 }
 
@@ -41,7 +44,6 @@ footer {
 }
 
 /* Navbar */
-
 .nav-icon:hover {
   color: #9CD3BF !important;
 }
@@ -76,7 +78,7 @@ footer {
   background-color: #fff;
 }
 
-/* Allath forms */ 
+/* Allath forms */
 .allauth-form-inner-content label:not([for='id_remember']) {
   display: none;
 }
@@ -89,7 +91,7 @@ footer {
 }
 
 .hero-container {
-  position:relative;
+  position: relative;
   margin-bottom: 30rem;
 }
 
@@ -115,7 +117,6 @@ footer {
 }
 
 /* Checkout */
-
 .StripeElement {
   box-sizing: border-box;
   height: 40px;
@@ -163,20 +164,17 @@ footer {
 }
 
 /* Products */
-
 .product-card {
   min-height: 600px;
 }
 
 /* Selected product */
-
 .selcted-card {
   max-width: 300px;
   height: auto;
 }
 
 /* Shopping Bag */
-
 .bag-img {
   max-width: 100px;
   height: auto;
@@ -199,15 +197,13 @@ footer {
   color: #9CD3BF;
 }
 
-/* Profile */ 
-
+/* Profile */
 .order-history {
   max-height: 360px;
   overflow: auto;
 }
 
 /* Media queries */
-
 @media (max-width: 768px) {
   .hero-text {
     margin-top: 0px;
@@ -234,13 +230,13 @@ footer {
 
 @media (min-width: 768px) {
   .hero-text {
-      font-weight: 900;
-      position: relative;
-      margin-top: 7rem !important;
-      left: 10%;
-      z-index: 2;
-      font-size: 250% !important;
-      color: #000;
+    font-weight: 900;
+    position: relative;
+    margin-top: 7rem !important;
+    left: 10%;
+    z-index: 2;
+    font-size: 250% !important;
+    color: #000;
   }
 }
 
@@ -257,4 +253,3 @@ footer {
     margin-right: 10px;
   }
 }
-
