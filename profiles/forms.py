@@ -41,6 +41,6 @@ class UserProfileForm(forms.ModelForm):
         }
 
         for field in self.fields:
-            placeholder = placeholders[field]
+            placeholder = f'{placeholders[field]} *'
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].label = False
