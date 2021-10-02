@@ -206,7 +206,7 @@ footer {
 }
 
 /* Media queries */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hero-text {
     margin-top: 0px;
     font-weight: 700;
@@ -215,13 +215,13 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hero-image {
     display: none;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .shop-now {
     left: 50%;
     top: 50%;
@@ -230,7 +230,7 @@ footer {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
   .hero-text {
     font-weight: 900;
     position: relative;
