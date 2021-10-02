@@ -1,8 +1,6 @@
 import uuid
 
 from django.db import models
-from django.shortcuts import get_object_or_404
-
 from products.models import Product
 from django_countries.fields import CountryField
 from profiles.models import UserProfile
@@ -25,14 +23,6 @@ class Order(models.Model):
 
     def _generate_order_number(self):
         return uuid.uuid4().hex.upper()
-
-    def update_total(self):
-        shopping_bag = request.session.get('shopping_bag', {})
-        total = 0
-        for item_id, item_data in shopping_bag.items():
-            product = get_object_or_404(Product, pk=item_id)
-            total += product.price
-        self.save()
 
     def save(self, *args, **kwargs):
         if not self.order_number:

@@ -16,8 +16,12 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
+    current_shopping_bag = shopping_bag_contents(request)
+    total = current_shopping_bag['total']
+
     if request.method == 'POST':
         shopping_bag = request.session.get('shopping_bag', {})
+        print("ADDED BY JO: SHOPPING BAG ON LINE 20 = ", shopping_bag)
 
         form_data = {
             'name': request.POST['name'],
@@ -32,6 +36,8 @@ def checkout(request):
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save()
+            order.total = total
+            order.save()
             for item_id, item in shopping_bag.items():
                 try:
                     product = Product.objects.get(id=item_id)
@@ -45,6 +51,7 @@ def checkout(request):
                         "One of the products in your bag wasn't found in our database.")
                     )
                     order.delete()
+
                     return redirect(reverse(shopping_bag))
 
             return redirect(reverse('checkout_success', args=[order.order_number]))
@@ -87,7 +94,7 @@ def checkout(request):
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,
-    }   
+    }
 
     return render(request, template, context)
 

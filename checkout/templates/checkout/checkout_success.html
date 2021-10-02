@@ -53,7 +53,7 @@
         {% for item in order.orderitems.all %}
         <div class="row">
             <div class="col-12 col-md-4">
-                <p class="text-capitalize">{{ item.product.name }} {{ item.product.size }}</p>
+                <p class="text-capitalize">{{ item.product.name }} Size:{{ item.product.size }}</p>
             </div>
             <div class="col-12 col-md-8 text-md-right">
                 <p>{{ item.product.price }} <small>SEK</small></p>
@@ -132,7 +132,7 @@
                     <p>Order Total:</p>
                 </div>
                 <div class="col-12 col-md-8 text-md-right">
-                    <p>{{ total|floatformat:2 }} <small>SEK</small></p>
+                    <p>{{ order.total }} <small>SEK</small></p>
                 </div>
             </div>
         </div>
