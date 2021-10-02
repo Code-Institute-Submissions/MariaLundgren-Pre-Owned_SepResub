@@ -40,6 +40,10 @@ The main purpose of the website is for people to buy clothes, therefore, this wi
 
 Figma was used to create the wireframes, you can find them [here](https://www.figma.com/file/g7pvumQdDUknm1F5sEVoK9/MS4?node-id=0%3A1).
 
+#### Database schema
+
+DBdiagram was used to create a database schema, you can find it [here](media/database.png).
+
 ### Surface 
 
 #### Colors 
