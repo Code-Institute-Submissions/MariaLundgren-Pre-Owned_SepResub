@@ -39,9 +39,8 @@
                 <table>
                     <thead>
                         <tr>
-                            <th style="width: 25%">Order</th>
-                            <th style="width: 25%">Date</th>
-                            <th style="width: 25%">Items</th>
+                            <th style="width: 20%">Order</th>
+                            <th style="width: 20%">Date</th>
                             <th style="width: 25%">Order Total</th>
                         </tr>
                     <tbody>
@@ -53,15 +52,6 @@
                                 </a>
                             </td>
                             <td>{{ order.date | date:"d N Y" }}</td>
-                            <td>
-                                <ul class="list-unstyled">
-                                    {% for item in order.orderitems.all %}
-                                    <li class="text-capitalize">
-                                        {{ item.product.name }}
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            </td>
                             <td>
                                 {{ order.total }}
                             </td>
