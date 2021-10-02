@@ -74,31 +74,6 @@
                             <p class="my-0">{{ item.product.price }} <small>SEK</small></p>
                             <a class="text-danger" data-bs-toggle="modal"
                                 data-bs-target="#myModal{{ item.item_id }}"><small>Remove</small></a>
-                            <!-- Modal -->
-                            {% for item in shopping_bag_items %}
-                            <div class="modal fade" id="myModal{{ item.item_id }}" tabindex="-1"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Are you sure you want to remove {{ item.product.name }} from your shopping
-                                            bag?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close</button>
-                                            <a action="{% url 'remove_from_shopping_bag' item.item_id %}" method="POST"
-                                                class="remove-item btn btn-danger"
-                                                id="remove_{{ item.item_id }}">Remove</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            {% endfor %}
                         </td>
                         {% endfor %}
                     </tr>
@@ -118,6 +93,32 @@
         </div>
     </div>
 </div>
+
+  <!-- Modal -->
+  {% for item in shopping_bag_items %}
+  <div class="modal fade" id="myModal{{ item.item_id }}" tabindex="-1"
+      aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal"
+                      aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  Are you sure you want to remove {{ item.product.name }} from your shopping
+                  bag?
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary"
+                      data-bs-dismiss="modal">Close</button>
+                  <a action="{% url 'remove_from_shopping_bag' item.item_id %}" method="POST"
+                      class="remove-item btn btn-danger"
+                      id="remove_{{ item.item_id }}">Remove</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  {% endfor %}
 
 {% endblock %}
 
