@@ -179,13 +179,6 @@ footer {
   height: auto;
 }
 
-/* Shopping Bag */
-.bag-img {
-  max-width: 200px;
-  height: auto;
-}
-
-
 /* Footer */
 footer {
   height: 75px;
@@ -269,3 +262,14 @@ footer {
     height: auto;
   }
 }
+
+@media (max-width: 768px) {
+  .selcted-card {
+    max-width: 290px;
+    height: auto;
+  }
+}
+
+
+
+
