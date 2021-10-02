@@ -29,11 +29,12 @@
                             <p class="text-capitalize">{{ favourite.product.name }}</p>
                             <p>{{ favourite.product.price }} <small>SEK</small></p>
                         </div>
-                            <a class="text-danger" data-bs-toggle="modal" data-bs-target="#myModal{{ favourite.product.id }}"><small>Remove</small></a>
+                        <a class="text-danger" data-bs-toggle="modal"
+                            data-bs-target="#myModal{{ favourite.product.id }}"><small>Remove</small></a>
                         <!-- Modal -->
                         {% for products in favourites %}
-                        <div class="modal fade" id="myModal{{ favourite.product.id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
+                        <div class="modal fade" id="myModal{{ favourite.product.id }}" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -41,12 +42,15 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        Are you sure you want to remove {{ favourite.product.name }} from your favorites?
+                                        Are you sure you want to remove {{ favourite.product.name }} from your
+                                        favorites?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Close</button>
-                                            <a action="{% url 'remove_favourite' favourite.product_id %}" method="POST" class="remove-product btn btn-danger" id="remove_{{ favourite.product_id }}">Remove</a>
+                                        <a action="{% url 'remove_favourite' favourite.product_id %}" method="POST"
+                                            class="remove-product btn btn-danger"
+                                            id="remove_{{ favourite.product_id }}">Remove</a>
                                     </div>
                                 </div>
                             </div>

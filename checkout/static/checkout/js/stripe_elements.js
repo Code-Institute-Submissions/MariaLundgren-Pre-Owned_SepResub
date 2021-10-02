@@ -1,5 +1,3 @@
-
-
 let stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 let clientSecret = $('#id_client_secret').text().slice(1, -1);
 let stripe = Stripe(stripePublicKey);
@@ -19,7 +17,9 @@ let style = {
         iconColor: '#dc3545'
     }
 };
-let card = elements.create('card', {style: style});
+let card = elements.create('card', {
+    style: style
+});
 card.mount('#card-element');
 
 // Handle errors for card element
@@ -31,7 +31,7 @@ card.addEventListener('change', function (event) {
         `
         $(errorDiv).html(html);
     } else {
-        errorDiv.textContent='';
+        errorDiv.textContent = '';
     }
 });
 
@@ -39,15 +39,17 @@ card.addEventListener('change', function (event) {
 
 let form = document.getElementById('payment-form');
 
-form.addEventListener('submit', function(ev) {
+form.addEventListener('submit', function (ev) {
     ev.preventDefault();
-    card.update({ 'disabled': true});
+    card.update({
+        'disabled': true
+    });
     $('#submit-button').attr('disabled', true);
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
         }
-    }).then(function(result) {
+    }).then(function (result) {
         if (result.error) {
             let errorDiv = document.getElementById('payment-errors');
             let html = `
@@ -56,7 +58,9 @@ form.addEventListener('submit', function(ev) {
                 </span>
                 <span>${result.error.message}</span>`;
             $(errorDiv).html(html);
-            card.update({ 'disabled': false});
+            card.update({
+                'disabled': false
+            });
             $('#submit-button').attr('disabled', false);
         } else {
             if (result.paymentIntent.status === 'succeeded') {
