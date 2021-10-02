@@ -58,12 +58,13 @@
                                     {% for item in order.orderitems.all %}
                                     <li class="text-capitalize">
                                         {{ item.product.name }}
-                                        Size {{ item.product.size }}
                                     </li>
                                     {% endfor %}
                                 </ul>
                             </td>
-                            <td>
+                            <td> 
+                                {{ order.total }}
+                            </td>
                         </tr>
                         {% endfor %}
                     </tbody>
