@@ -208,6 +208,10 @@ footer {
   overflow: auto;
 }
 
+.message {
+  overflow-wrap: break-word;
+}
+
 /* Media queries */
 @media (max-width: 768px) {
   .hero-text {
