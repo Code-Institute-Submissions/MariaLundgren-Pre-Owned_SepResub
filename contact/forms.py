@@ -12,7 +12,8 @@ SUBJECT_CHOICES = [
 
 
 class ContactForm(forms.ModelForm):
-    subject = forms.CharField(widget=forms.Select(choices=BLANK_CHOICE_DASH + list(SUBJECT_CHOICES)))
+    subject = forms.CharField(widget=forms.Select(choices=BLANK_CHOICE_DASH +
+                              list(SUBJECT_CHOICES)))
     message = forms.CharField(min_length=20, widget=forms.Textarea)
 
     class Meta:
@@ -20,6 +21,7 @@ class ContactForm(forms.ModelForm):
         exclude = ('user', 'answer')
 
         help_texts = {
-            'order': _('If your message is concerning a specific order, please choose\
-                the order number to make it easier and faster for us to awnser you.'),
+            'order': _('If your message is concerning a specific order,\
+                please choose the order number to make it easier and\
+                faster for us to awnser you.'),
         }

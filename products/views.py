@@ -6,7 +6,6 @@ def products(request):
 
     products = Product.objects.order_by('-id')
     categories = None
-    sort = None
     direction = None
 
     if request.GET:

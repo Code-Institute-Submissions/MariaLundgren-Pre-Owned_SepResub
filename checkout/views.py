@@ -7,9 +7,10 @@ from .forms import OrderForm
 from shopping_bag.context import shopping_bag_contents
 from products.models import Product
 from .models import Order, OrderLineItem
-from profiles.models import UserProfile, User
+from profiles.models import UserProfile
 
 import stripe
+
 
 @login_required
 def checkout(request):
@@ -48,13 +49,15 @@ def checkout(request):
                     order_line_item.save()
                 except Product.DoesNotExist:
                     messages.errror(request, (
-                        "One of the products in your bag wasn't found in our database.")
+                        "One of the products in your bag wasn't \
+                         found in our database.")
                     )
                     order.delete()
 
                     return redirect(reverse(shopping_bag))
 
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                            args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please check your information.')
@@ -102,7 +105,6 @@ def checkout(request):
 @login_required
 def checkout_success(request, order_number):
 
-    save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
 
     profile = UserProfile.objects.get(user=request.user)
