@@ -116,6 +116,11 @@ footer {
   color: #000;
 }
 
+.home-text-small-screens {
+  font-family: "Permanent Marker", sans-serif;
+  font-size: 200%;
+}
+
 /* Checkout */
 .StripeElement {
   box-sizing: border-box;
