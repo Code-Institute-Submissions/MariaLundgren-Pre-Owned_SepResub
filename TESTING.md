@@ -145,6 +145,8 @@
 -	Trying to register with all the required information filled in and this brings me to the verify email address page and an alert message shows and a verification email has been sent to the email address, after verifying the email the user can sign in to their account.  
 -	Trying to log in as a user who has registered but not verified the email redirects user to the verify you email address page.
 #### User Stories Testing of Register Page
+- I want to be able to sign up to become a registered user.
+    -   On the register page a user can register for an account.   
 -	I should only be able to see my own profile page and favorites.
     -	See manual testing, a user can only access their own pages that require the user to be logged in, otherwise the user will be redirected to the login page or their own page in logged in state. 
 
