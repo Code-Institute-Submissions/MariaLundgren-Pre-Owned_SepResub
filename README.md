@@ -40,6 +40,8 @@ The main purpose of the website is for people to buy clothes, therefore, this wi
 
 Figma was used to create the wireframes, you can find them [here](https://www.figma.com/file/g7pvumQdDUknm1F5sEVoK9/MS4?node-id=0%3A1).
 
+There are some changes made in the final website making it not match completely to the wireframes. Some fetaures are slightly changed to make them work better in the live project and based on feedback gotten on the website and some smaller things have not been implemented because of time issues, like searching and some filtering options which could be implemented in the project in the future. 
+
 #### Database schema
 
 DBdiagram was used to create a database schema, you can find it [here](media/database.png).
