@@ -27,24 +27,29 @@
 -	Clicking on the favorites icon as an anonymous user brings the user to the log in page.
 -	Clicking on the favorites icon as a registered user brings the user to my favorites page.  
 -	Clicking on the shopping bag icon brings the user to the shopping bag page. 
--	Clicking on the All products link brings the user to the products page with all the products. 
--	Clicking on the tops link shows the user only the tops on the products page. 
--	Clicking on the pants link shows the user only the pants on the products page. 
--	Clicking on the dresses link shows the user only the dresses on the products page. 
--	Clicking on the skirts link shows the user only the skirts on the products page. 
--	Clicking on the outerwear link shows the user only the outerwear on the products page. 
+-	Clicking on the Home link brings the user to the home page.
+-	Clicking on the Shop link brings the user to the products page.
+-   Clicking at the contact link as an anonymous user brings the user to the log in page.
+-   Clicking at the contact link as an registered user brings the user to the contact page.
+
 
 #### Manual Testing of Footer
 -	Clicking the Instagram icon brings the user to instagram.com in a new browser window. 
 -	Clicking the Facebook icon brings the user to facebook.com in a new browser window.
 -	Clicking the LinkedIn icon brings the user to linkedin.com in a new browser window.
--	Clicking on the contact icon brings the user to the contact page. 
 
 #### Manual Testing of Home Page 
--	Clicking on the link text brings the user to the products page. 
+-	Clicking on the shop now button brings the user to the products page. 
 
 #### Manual Testing of Products Page
 -	Clicking on the product image brings the user to the selected product page of that product.
+-   Clicking on the news button shows the user all the products with the product added last first on the products page.
+-   Clicking on the tops button shows the user only the tops on the products page. 
+-   Clicking on the pants button shows the user only the pants on the products page. 
+-   Clicking on the dresses button shows the user only the dresses on the products page. 
+-   Clicking on the skirts button shows the user only the skirts on the products page. 
+-   Clicking on the outerwear button shows the user only the outerwear on the products page. 
+
 
 #### Manual Testing of Selected Product Page
 -	Clicking on the add to shopping bag button adds the product to the shopping bag and a success message is shown. 
@@ -52,7 +57,9 @@
 -	Trying to add a product to favorites as an anonymous user and the user gets redirected to the login page. 
 
 #### Manual Testing of My Shopping Bag Page
--	Clicking on the remove button on the product in the shopping bag removes the product and a success message is shown.  
+-	Clicking on the remove button on the product in the shopping bag and the delete modal shows asking the user if they are sure they want to remove the product.
+    - Clicking on the remove button removes the product and a success message is show. 
+    - Clicking on the close button or outside the modal and the modal disepears and the product isn't deleted from the shopping bag. 
 -	Clicking on the secure checkout button as an anonymous user redirects the user to the log in page.
 -	Clicking on the secure checkout button as a registered user brings the user to the checkout page.
 #### User Stories Testing of My Shopping Bag Page
@@ -60,8 +67,13 @@
     -	On the selected products page the user can add products to their shopping bag. 
 
 #### Manual Testing of My Profile Page
+-   Trying to submit the form without filling in the minimum lenth of charachters in the fields and a message shows to lengthen the text in the field.
+-   Trying to submit the form with more than the maximium numbers of charachters allowed and a message shows to saying how many characters are allowed and how many are in the field right now. 
+-   Trying to submit the form with special characters in the fields or anything else than numbers and + in the phone number field and a message shows saying which characters are allowed in that field. 
+-   Trying to submit the form without all the fields filled in and a message shows to fill out field. 
+-   Trying to submit the form with only spaces in one of the fields and a message shows that the field are required.
 -	Filling out the default delivery information form and clicking on the update information button and the default delivery is saved in the form. 
--	Changing in the default delivery information form when it’s filled in and clicking on the update information button updates the information in the form. 
+-	Changing in the default delivery information form when it’s filled in and clicking on the update information button updates the information in the form.
 -	Clicking on the order number of one of the users’ orders brings the user to the checkout success page of that order and an alert message shows. 
 -	Saving the URL for the profile page and tries to access it as an anonymous user redirects the user to the log in page. 
 -	Saving my profile URL for one user and tries to access it as another user brings the user to their own profile page. 
@@ -76,7 +88,9 @@
 
 #### Manual Testing of My Favorites Page
 -	Clicking on one of the products images brings the user to the selected products page of that product.
--	Clicking on the remove button on a product in favorites removes that product and shows a success message. 
+-	Clicking on the remove button on the product in favorites and the delete modal shows asking the user if they are sure they want to remove the product.
+    - Clicking on the remove button removes the product and a success message is show. 
+    - Clicking on the close button or outside the modal and the modal disepears and the product isn't deleted from favorites. 
 -	Saving the favorites URL for one user and tries to access it as another user brings the user to their own favorites page. 
 #### User Stories Testing of My Favorites Page
 -	I want to be able to save products that I like to my profile so I can easily find them later.
@@ -125,8 +139,8 @@
     -	In the checkout, the user can complete a purchase to buy one or several products. 
 
 #### Manual Testing of Contact Page
--	Trying to submit form without all the fields filled in and a message appears to fill out fields. 
--	Trying to submit the form with the fields filled in and the form submits, and a success message appears. 
+-	Trying to submit form without all required fields filled in and a message appears to fill out fields. 
+-	Trying to submit the form with required fields filled in and the form submits, and a success message appears. 
 -	Trying to access the contact page as an anonymous user and user gets redirected to the login page. 
 -	Saving the URL for the contact page and tries to access it as an anonymous user and user gets redirected to the login page.
 #### User Stories Testing of Contact Page
