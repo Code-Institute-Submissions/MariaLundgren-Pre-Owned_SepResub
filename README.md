@@ -1,5 +1,9 @@
 # Pre-Owned
 
+![Image of website on different devices](media/devices.jpg)
+
+[Link to the live website](https://pre-owned.herokuapp.com/)
+
 Pre-owned is a website that sells pre-owned clothes, whether you want to buy clothes that have already been owned by someone else previously because it’s better for the environment or because you can find more original pieces of clothing this is the store for you. The project is created for educational purposes only.
 
 ## UX
