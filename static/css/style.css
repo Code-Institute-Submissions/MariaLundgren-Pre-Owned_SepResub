@@ -270,6 +270,12 @@ footer {
   }
 }
 
+@media (max-width: 985px) {
+  .nav-item {
+    margin-left: 0 !important;
+  }
+}
+
 
 
 
