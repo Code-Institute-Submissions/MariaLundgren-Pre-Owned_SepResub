@@ -216,12 +216,27 @@ You can find this in the Config Vars in the settings tab.
 13. Confirm the email address for your superuser in the admin or by the email confirmation link. 
 14. Add stripe to the Heroku config vars add STRIPE_PUBLIC_KEY and STRIPE_SECRET_KEY, you can find them on stripe under developers and the API keys. 
 
-### Run code locally 
+### Run code locally
 1. Find the repository you want and click on it.
-2. Above all the files in the repository click on the green Gitpod button.
-3. This opens a new copy of the workspace on Gitpod. You should only do this once and then you can access the workspace directly from Gitpod. If you press the green Gitpod button again it will create a new copy of the workspace on Gitpod.
-4. You can now edit the workspace locally.
-5. If you want to open a preview window of the workspace in the browser you can type in the command: python3 manage.py runserver in the terminal and then click open browser in the pop-up window down to the right.
+2. Above all the files in the repository click on the green Gitpod button or click on code to get option to clone the repository by copying the link if you dont want to use gitpod.
+3. 
+    -  If you clicked on the green gitpod button this opens a new copy of the workspace on Gitpod. You should only do this once and then you can access the workspace directly from Gitpod. If you press the green Gitpod button again it will create a new copy of the workspace on Gitpod.
+    - If copied the link to clone the repository in your terminal type ` git clone ` and paste the copied link.
+4. To install the required packages in your command line type ` pip install -r requirements.txt `
+5. Set up an env.py file in the root directory or add the environment vaiables in variables that can be located under the settings tab on the gitpod dashboard. These are the vaiables you need:
+```
+'SECRET_KEY', '<Your secret key>'
+'STRIPE_PUBLIC_KEY', '<Your stripe public key>'
+'STRIPE_SECRET_KEY', '<Your stripe secret key>'
+```
+6. Make migrations by typing this in your terminal
+```
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
+7. Create a suoperuser to be able to access the Django admnin panel by typing ` python3 manage.py createsuperuser ` in your terminal.
+ 8. You can now edit the workspace locally.
+ 9. If you want to open a preview window of the workspace in the browser you can type in the command: python3 manage.py runserver in the terminal and then click open browser in the pop-up window down to the right.
 
 ## Credits 
 
