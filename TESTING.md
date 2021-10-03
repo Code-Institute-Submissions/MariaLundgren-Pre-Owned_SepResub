@@ -52,6 +52,9 @@
 -   Clicking on the dresses button shows the user only the dresses on the products page. 
 -   Clicking on the skirts button shows the user only the skirts on the products page. 
 -   Clicking on the outerwear button shows the user only the outerwear on the products page. 
+-	Clicking on the add to favorite button as a registered user adds the product to favorites and a success message is shown. 
+-	Trying to add a product to favorites as an anonymous user and the user gets redirected to the login page.  
+
 
 #### User Stories Testing of Products Page
 -	I want to browse the products the company is offering.
@@ -60,10 +63,7 @@
 ![image of products page](media/products.jpg)
 
 #### Manual Testing of Selected Product Page
--	Clicking on the add to shopping bag button adds the product to the shopping bag and a success message is shown. 
--	Clicking on the add to favorite button as a registered user adds the product to favorites and a success message is shown. 
--	Trying to add a product to favorites as an anonymous user and the user gets redirected to the login page.  
-
+-	Clicking on the add to shopping bag button adds the product to the shopping bag and a success message is shown.
 ![image of selected product page](media/selected_product.jpg)
 
 #### Manual Testing of My Shopping Bag Page
