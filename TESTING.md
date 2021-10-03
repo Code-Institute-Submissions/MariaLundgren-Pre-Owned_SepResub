@@ -32,6 +32,7 @@
 -   Clicking at the contact link as an anonymous user brings the user to the log in page.
 -   Clicking at the contact link as an registered user brings the user to the contact page.
 
+![image of navbar](media/navbar.jpg)
 
 #### Manual Testing of Footer
 -	Clicking the Instagram icon brings the user to instagram.com in a new browser window. 
@@ -40,6 +41,8 @@
 
 #### Manual Testing of Home Page 
 -	Clicking on the shop now button brings the user to the products page. 
+
+![image of home page](media/home.jpg)
 
 #### Manual Testing of Products Page
 -	Clicking on the product image brings the user to the selected product page of that product.
@@ -50,11 +53,14 @@
 -   Clicking on the skirts button shows the user only the skirts on the products page. 
 -   Clicking on the outerwear button shows the user only the outerwear on the products page. 
 
+![image of products page](media/products.jpg)
 
 #### Manual Testing of Selected Product Page
 -	Clicking on the add to shopping bag button adds the product to the shopping bag and a success message is shown. 
 -	Clicking on the add to favorite button as a registered user adds the product to favorites and a success message is shown. 
 -	Trying to add a product to favorites as an anonymous user and the user gets redirected to the login page. 
+
+![image of selected product page](media/selected_product.jpg)
 
 #### Manual Testing of My Shopping Bag Page
 -	Clicking on the remove button on the product in the shopping bag and the delete modal shows asking the user if they are sure they want to remove the product.
@@ -65,6 +71,9 @@
 #### User Stories Testing of My Shopping Bag Page
 -	I want to be able to add and delete products to my shopping bag.
     -	On the selected products page the user can add products to their shopping bag. 
+
+![image of shopping bag page](media/shopping_bag.jpg)
+![image of shopping bag page](media/bag_remove.jpg)
 
 #### Manual Testing of My Profile Page
 -   Trying to submit the form without filling in the minimum lenth of charachters in the fields and a message shows to lengthen the text in the field.
@@ -77,6 +86,7 @@
 -	Clicking on the order number of one of the users’ orders brings the user to the checkout success page of that order and an alert message shows. 
 -	Saving the URL for the profile page and tries to access it as an anonymous user redirects the user to the log in page. 
 -	Saving my profile URL for one user and tries to access it as another user brings the user to their own profile page. 
+
 #### User Stories Testing of My Profile Page
 -	I want to be able to see my orders.
     -	On the user profile, the user can access all the past orders that the user has made.
@@ -85,6 +95,8 @@
 -	I should only be able to change the profile information of my own profile.
     -	The user can only access their own profile and can therefore also only change their own profile.
 
+![image of profile page](media/profile.jpg)
+![image of profile page](media/profile2.jpg)
 
 #### Manual Testing of My Favorites Page
 -	Clicking on one of the products images brings the user to the selected products page of that product.
@@ -95,6 +107,9 @@
 #### User Stories Testing of My Favorites Page
 -	I want to be able to save products that I like to my profile so I can easily find them later.
     -	On the selected product page a user can add a product to favorites to later be able to find them on the favorites page.
+
+![image of favorite page](media/favorite.jpg)
+![image of favorite page](media/favorite_remove.jpg)
 
 #### Manual Testing of Log In page
 -	Clicking on the log in link brings the user to the log in page.
@@ -107,11 +122,15 @@
 - I want to be able to log in to my account.
     - On the log in page registered users can log in to their account.
 
+![image of log in page](media/login.jpg)
+
 #### Manual Testing of Log Out Page
 -	Clicking on the sign out button and the user gets logged out from their account and a success message shows.
 #### User Stories Testing of Log Out Page
 -	I want to be able to log out of my account.
     -	On the log out a logged in user can log out from their account.  
+
+![image of log out page](media/logout.jpg)
 
 #### Manual Testing of Register Page
 -	Clicking on the register link brings the user to the register page.
@@ -125,7 +144,7 @@
 -	I should only be able to see my own profile page and favorites.
     -	See manual testing, a user can only access their own pages that require the user to be logged in, otherwise the user will be redirected to the login page or their own page in logged in state. 
 
-
+![image of register page](media/register.jpg)
 
 #### Manual Testing of Checkout page
 -	Clicking on the complete order button without filling in all the information in the form and a message appears to fill out the form. 
@@ -138,6 +157,10 @@
 -	I want to be able to buy the products I have chosen.
     -	In the checkout, the user can complete a purchase to buy one or several products. 
 
+![image of checkout page](media/checkout.jpg)
+![image of checkout page](media/checkout2.jpg)
+![image of checkout success page](media/checkout_success.jpg)
+
 #### Manual Testing of Contact Page
 -	Trying to submit form without all required fields filled in and a message appears to fill out fields. 
 -	Trying to submit the form with required fields filled in and the form submits, and a success message appears. 
@@ -147,7 +170,7 @@
 -	I want to be able to get in contact with the site owner if I have any questions.
     -	Logged in users can send a message on the contact page to get in touch with the site owner. 
 
-
+![image of contact page](media/contact.jpg)
 
 ### Responsiveness
 
