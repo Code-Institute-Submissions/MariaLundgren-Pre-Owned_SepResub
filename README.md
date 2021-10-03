@@ -236,21 +236,22 @@ python3 manage.py migrate
 ```
 7. Create a suoperuser to be able to access the Django admnin panel by typing ` python3 manage.py createsuperuser ` in your terminal.
  8. You can now edit the workspace locally.
- 9. If you want to open a preview window of the workspace in the browser you can type in the command: python3 manage.py runserver in the terminal and then click open browser in the pop-up window down to the right.
+ 9. If you want to open a preview window of the workspace in the browser you can type in the command: `python3 manage.py runserver` in the terminal and then click open browser in the pop-up window down to the right.
 
 ## Credits 
 
 ### Code 
-The foundation of this site is sourced from [Code Institute Educational material - Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
+- The foundation of this site is sourced from [Code Institute Educational material - Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1)
 
-[This](https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid) document was used to help build the contact app
+- [This](https://www.twilio.com/blog/build-contact-form-python-django-twilio-sendgrid) document was used to help build the contact app
 
-Bootstrap was used to style elements and make the site responsive.
+- Bootstrap was used to style elements and make the site responsive.
 
 ### Media 
 
-[sweater image from](https://www.pexels.com/photo/woman-in-yellow-sweater-smiling-3732881/)
-[pants image from](https://www.pexels.com/photo/slender-teen-with-bright-yellow-skateboard-5325881/)
-[skirt image from](https://www.pexels.com/photo/woman-holding-green-and-red-leather-handbag-932401/)
-[outerwear image from](https://www.pexels.com/photo/standing-woman-holding-cup-of-drink-3418753/)
-[dress image from](https://www.pexels.com/photo/woman-in-red-spaghetti-strap-dress-standing-near-brown-wooden-post-5822660/)
+- Hero image from [Blue Bird](https://www.pexels.com/photo/young-ethnic-female-strolling-on-street-with-bicycle-during-coffee-break-7242914/) on pexels
+- [sweater image from](https://www.pexels.com/photo/woman-in-yellow-sweater-smiling-3732881/)
+- [pants image from](https://www.pexels.com/photo/slender-teen-with-bright-yellow-skateboard-5325881/)
+- [skirt image from](https://www.pexels.com/photo/woman-holding-green-and-red-leather-handbag-932401/)
+- [outerwear image from](https://www.pexels.com/photo/standing-woman-holding-cup-of-drink-3418753/)
+- [dress image from](https://www.pexels.com/photo/woman-in-red-spaghetti-strap-dress-standing-near-brown-wooden-post-5822660/)
